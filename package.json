@@ -17,6 +17,11 @@
     "@angular/forms": "^21.2.0",
     "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
+    "@bpmn-io/properties-panel": "^3.40.3",
+    "bpmn-js": "^18.13.1",
+    "bpmn-js-properties-panel": "^5.53.0",
+    "bpmn-js-token-simulation": "^0.39.3",
+    "diagram-js": "^15.9.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
