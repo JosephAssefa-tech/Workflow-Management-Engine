@@ -1,0 +1,11 @@
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Domain\bin\Debug\net8.0\WorkflowManagement.Domain.deps.json
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Domain\bin\Debug\net8.0\WorkflowManagement.Domain.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Domain\bin\Debug\net8.0\WorkflowManagement.Domain.pdb
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Domain\obj\Debug\net8.0\WorkflowManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Domain\obj\Debug\net8.0\WorkflowManagement.Domain.AssemblyInfoInputs.cache
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Domain\obj\Debug\net8.0\WorkflowManagement.Domain.AssemblyInfo.cs
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Domain\obj\Debug\net8.0\WorkflowManagement.Domain.csproj.CoreCompileInputs.cache
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Domain\obj\Debug\net8.0\WorkflowManagement.Domain.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Domain\obj\Debug\net8.0\refint\WorkflowManagement.Domain.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Domain\obj\Debug\net8.0\WorkflowManagement.Domain.pdb
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Domain\obj\Debug\net8.0\ref\WorkflowManagement.Domain.dll

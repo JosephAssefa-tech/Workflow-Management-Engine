@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\ICSMIS\\Workflow-Management\\WorkflowManagementEngine\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F1A31729-76E0-4A8E-B470-EA046E7AA196}|WorkflowManagement.Infrastructure\\WorkflowManagement.Infrastructure.csproj|c:\\icsmis\\workflow-management\\workflowmanagementengine\\workflowmanagement.infrastructure\\extensions\\elsaextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1A31729-76E0-4A8E-B470-EA046E7AA196}|WorkflowManagement.Infrastructure\\WorkflowManagement.Infrastructure.csproj|solutionrelative:workflowmanagement.infrastructure\\extensions\\elsaextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E98636E-FAB4-487E-B381-3014771CF3B8}|WorkflowManagementEngine\\WorkflowManagementEngine.csproj|c:\\icsmis\\workflow-management\\workflowmanagementengine\\workflowmanagementengine\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E98636E-FAB4-487E-B381-3014771CF3B8}|WorkflowManagementEngine\\WorkflowManagementEngine.csproj|solutionrelative:workflowmanagementengine\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1A31729-76E0-4A8E-B470-EA046E7AA196}|WorkflowManagement.Infrastructure\\WorkflowManagement.Infrastructure.csproj|c:\\icsmis\\workflow-management\\workflowmanagementengine\\workflowmanagement.infrastructure\\workflowmanagement.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F1A31729-76E0-4A8E-B470-EA046E7AA196}|WorkflowManagement.Infrastructure\\WorkflowManagement.Infrastructure.csproj|solutionrelative:workflowmanagement.infrastructure\\workflowmanagement.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E98636E-FAB4-487E-B381-3014771CF3B8}|WorkflowManagementEngine\\WorkflowManagementEngine.csproj|c:\\icsmis\\workflow-management\\workflowmanagementengine\\workflowmanagementengine\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6E98636E-FAB4-487E-B381-3014771CF3B8}|WorkflowManagementEngine\\WorkflowManagementEngine.csproj|solutionrelative:workflowmanagementengine\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WorkflowManagement.Infrastructure",
+              "DocumentMoniker": "C:\\ICSMIS\\Workflow-Management\\WorkflowManagementEngine\\WorkflowManagement.Infrastructure\\WorkflowManagement.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "WorkflowManagement.Infrastructure\\WorkflowManagement.Infrastructure.csproj",
+              "ToolTip": "C:\\ICSMIS\\Workflow-Management\\WorkflowManagementEngine\\WorkflowManagement.Infrastructure\\WorkflowManagement.Infrastructure.csproj",
+              "RelativeToolTip": "WorkflowManagement.Infrastructure\\WorkflowManagement.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAApwAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-13T12:22:32.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ElsaExtensions.cs",
+              "DocumentMoniker": "C:\\ICSMIS\\Workflow-Management\\WorkflowManagementEngine\\WorkflowManagement.Infrastructure\\Extensions\\ElsaExtensions.cs",
+              "RelativeDocumentMoniker": "WorkflowManagement.Infrastructure\\Extensions\\ElsaExtensions.cs",
+              "ToolTip": "C:\\ICSMIS\\Workflow-Management\\WorkflowManagementEngine\\WorkflowManagement.Infrastructure\\Extensions\\ElsaExtensions.cs",
+              "RelativeToolTip": "WorkflowManagement.Infrastructure\\Extensions\\ElsaExtensions.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwA8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:16:13.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\ICSMIS\\Workflow-Management\\WorkflowManagementEngine\\WorkflowManagementEngine\\appsettings.json",
+              "RelativeDocumentMoniker": "WorkflowManagementEngine\\appsettings.json",
+              "ToolTip": "C:\\ICSMIS\\Workflow-Management\\WorkflowManagementEngine\\WorkflowManagementEngine\\appsettings.json",
+              "RelativeToolTip": "WorkflowManagementEngine\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-13T12:07:14.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\ICSMIS\\Workflow-Management\\WorkflowManagementEngine\\WorkflowManagementEngine\\Program.cs",
+              "RelativeDocumentMoniker": "WorkflowManagementEngine\\Program.cs",
+              "ToolTip": "C:\\ICSMIS\\Workflow-Management\\WorkflowManagementEngine\\WorkflowManagementEngine\\Program.cs",
+              "RelativeToolTip": "WorkflowManagementEngine\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T12:06:35.331Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

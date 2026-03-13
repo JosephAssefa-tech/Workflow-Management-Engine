@@ -1,0 +1,11 @@
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Shared\bin\Debug\net8.0\WorkflowManagement.Shared.deps.json
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Shared\bin\Debug\net8.0\WorkflowManagement.Shared.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Shared\bin\Debug\net8.0\WorkflowManagement.Shared.pdb
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Shared\obj\Debug\net8.0\WorkflowManagement.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Shared\obj\Debug\net8.0\WorkflowManagement.Shared.AssemblyInfoInputs.cache
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Shared\obj\Debug\net8.0\WorkflowManagement.Shared.AssemblyInfo.cs
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Shared\obj\Debug\net8.0\WorkflowManagement.Shared.csproj.CoreCompileInputs.cache
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Shared\obj\Debug\net8.0\WorkflowManagement.Shared.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Shared\obj\Debug\net8.0\refint\WorkflowManagement.Shared.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Shared\obj\Debug\net8.0\WorkflowManagement.Shared.pdb
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Shared\obj\Debug\net8.0\ref\WorkflowManagement.Shared.dll

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Dd7Xc1JrjMCFHFk3EQgb2VAldZeblLAEOLiRZUljZ3c=",
+  "Source": "WorkflowManagementEngine",
+  "BasePath": "_content/WorkflowManagementEngine",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

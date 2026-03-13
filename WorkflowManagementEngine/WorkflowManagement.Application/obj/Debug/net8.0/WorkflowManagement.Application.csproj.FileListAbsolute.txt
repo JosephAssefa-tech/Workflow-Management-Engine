@@ -1,0 +1,12 @@
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\bin\Debug\net8.0\WorkflowManagement.Application.deps.json
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\bin\Debug\net8.0\WorkflowManagement.Application.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\bin\Debug\net8.0\WorkflowManagement.Application.pdb
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\obj\Debug\net8.0\WorkflowManagement.Application.csproj.AssemblyReference.cache
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\obj\Debug\net8.0\WorkflowManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\obj\Debug\net8.0\WorkflowManagement.Application.AssemblyInfoInputs.cache
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\obj\Debug\net8.0\WorkflowManagement.Application.AssemblyInfo.cs
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\obj\Debug\net8.0\WorkflowManagement.Application.csproj.CoreCompileInputs.cache
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\obj\Debug\net8.0\WorkflowManagement.Application.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\obj\Debug\net8.0\refint\WorkflowManagement.Application.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\obj\Debug\net8.0\WorkflowManagement.Application.pdb
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Application\obj\Debug\net8.0\ref\WorkflowManagement.Application.dll

@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowManagementEngine", "WorkflowManagementEngine\WorkflowManagementEngine.csproj", "{6E98636E-FAB4-487E-B381-3014771CF3B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{EC0BB457-6AED-4FB0-BEEB-F3700E651D6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflow", "Workflow", "{EACC599B-5206-4AA8-9AEC-1E0E699F0AD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowManagement.Application", "WorkflowManagement.Application\WorkflowManagement.Application.csproj", "{4C4AA657-29E9-490F-8D92-755CD9DF2AF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowManagement.Domain", "WorkflowManagement.Domain\WorkflowManagement.Domain.csproj", "{E939D454-2830-4B1B-A064-BC34ABEA7A33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowManagement.Infrastructure", "WorkflowManagement.Infrastructure\WorkflowManagement.Infrastructure.csproj", "{F1A31729-76E0-4A8E-B470-EA046E7AA196}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowManagement.Shared", "WorkflowManagement.Shared\WorkflowManagement.Shared.csproj", "{C4AF19CC-6396-4B06-9EBA-D536324B0DF8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F89F4F7C-CCDC-4871-9723-2052E0826588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowManagement.Tests.Unit", "WorkflowManagement.Tests.Unit\WorkflowManagement.Tests.Unit.csproj", "{8F0B2654-4459-4500-B07E-3F0F6A74A3AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowManagement.Tests.Integration", "WorkflowManagement.Tests.Integration\WorkflowManagement.Tests.Integration.csproj", "{2989D159-9B26-4891-96F7-086300307693}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E98636E-FAB4-487E-B381-3014771CF3B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E98636E-FAB4-487E-B381-3014771CF3B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E98636E-FAB4-487E-B381-3014771CF3B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E98636E-FAB4-487E-B381-3014771CF3B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C4AA657-29E9-490F-8D92-755CD9DF2AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C4AA657-29E9-490F-8D92-755CD9DF2AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C4AA657-29E9-490F-8D92-755CD9DF2AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C4AA657-29E9-490F-8D92-755CD9DF2AF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E939D454-2830-4B1B-A064-BC34ABEA7A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E939D454-2830-4B1B-A064-BC34ABEA7A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E939D454-2830-4B1B-A064-BC34ABEA7A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E939D454-2830-4B1B-A064-BC34ABEA7A33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A31729-76E0-4A8E-B470-EA046E7AA196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A31729-76E0-4A8E-B470-EA046E7AA196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A31729-76E0-4A8E-B470-EA046E7AA196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A31729-76E0-4A8E-B470-EA046E7AA196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4AF19CC-6396-4B06-9EBA-D536324B0DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4AF19CC-6396-4B06-9EBA-D536324B0DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4AF19CC-6396-4B06-9EBA-D536324B0DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4AF19CC-6396-4B06-9EBA-D536324B0DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F0B2654-4459-4500-B07E-3F0F6A74A3AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F0B2654-4459-4500-B07E-3F0F6A74A3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F0B2654-4459-4500-B07E-3F0F6A74A3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0B2654-4459-4500-B07E-3F0F6A74A3AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2989D159-9B26-4891-96F7-086300307693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2989D159-9B26-4891-96F7-086300307693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2989D159-9B26-4891-96F7-086300307693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2989D159-9B26-4891-96F7-086300307693}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EACC599B-5206-4AA8-9AEC-1E0E699F0AD4} = {EC0BB457-6AED-4FB0-BEEB-F3700E651D6F}
+		{4C4AA657-29E9-490F-8D92-755CD9DF2AF4} = {EACC599B-5206-4AA8-9AEC-1E0E699F0AD4}
+		{E939D454-2830-4B1B-A064-BC34ABEA7A33} = {EACC599B-5206-4AA8-9AEC-1E0E699F0AD4}
+		{F1A31729-76E0-4A8E-B470-EA046E7AA196} = {EACC599B-5206-4AA8-9AEC-1E0E699F0AD4}
+		{C4AF19CC-6396-4B06-9EBA-D536324B0DF8} = {EACC599B-5206-4AA8-9AEC-1E0E699F0AD4}
+		{F89F4F7C-CCDC-4871-9723-2052E0826588} = {EACC599B-5206-4AA8-9AEC-1E0E699F0AD4}
+		{8F0B2654-4459-4500-B07E-3F0F6A74A3AA} = {F89F4F7C-CCDC-4871-9723-2052E0826588}
+		{2989D159-9B26-4891-96F7-086300307693} = {F89F4F7C-CCDC-4871-9723-2052E0826588}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BABD3CFD-269F-4E49-A04B-2220C49CB209}
+	EndGlobalSection
+EndGlobal
