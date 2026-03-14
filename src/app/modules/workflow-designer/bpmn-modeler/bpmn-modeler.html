@@ -1,6 +1,59 @@
+<div class="designer-wrapper" [class.dark-mode]="isDarkMode">
 
-<div class="container">
-    <div #bpmnModelerRef class="bpmnModeler-container"></div>
-    <div #propertiesRef class="properties-container"></div>
+
+  <div class="designer-header">
+<div class="header-left">
+<mat-icon>account_tree</mat-icon> 
+  <span class="logo">Workflow Designer Engine</span>
 </div>
 
+    <div class="header-actions">
+      <button class="toolbar-btn">Save</button>
+      <button class="toolbar-btn">Deploy</button>
+      <button class="toolbar-btn">Validate</button>
+
+    <mat-slide-toggle 
+      [(ngModel)]="isDarkMode"
+      color="primary"
+      class="theme-toggle">
+      Dark Mode
+    </mat-slide-toggle>
+    </div>
+
+    
+  </div>
+
+
+
+  <div class="container">
+
+  
+    <div class="canvas-wrapper">
+
+      <div #bpmnModelerRef class="bpmnModeler-container"></div>
+
+
+      <div class="zoom-controls">
+        <button>+</button>
+        <button>-</button>
+      </div>
+
+
+
+    </div>
+
+
+    <div class="properties-wrapper">
+      <div class="properties-header">Properties</div>
+      <div #propertiesRef class="properties-container"></div>
+    </div>
+
+  </div>
+
+
+  <div class="status-bar">
+    <span>Workflow Engine: Ready</span>
+    <span>BPMN Version 2.0</span>
+  </div>
+
+</div>

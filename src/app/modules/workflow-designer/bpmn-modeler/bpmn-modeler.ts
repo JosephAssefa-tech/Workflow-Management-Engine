@@ -1,96 +1,145 @@
-import { Component,ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterContentInit, OnDestroy } from '@angular/core';
 import Modeler from 'bpmn-js/lib/Modeler';
-import {from, Observable} from 'rxjs';
+import { from, Observable } from 'rxjs';
 import TokenSimulationModule from 'bpmn-js-token-simulation';
 import {
   BpmnPropertiesPanelModule,
   BpmnPropertiesProviderModule
 } from 'bpmn-js-properties-panel';
 
-
 @Component({
   selector: 'app-bpmn-modeler',
-   standalone: false,
+  standalone: false,
   templateUrl: './bpmn-modeler.html',
-  styleUrl: './bpmn-modeler.css',
+  styleUrls: ['./bpmn-modeler.css'],
 })
-export class BpmnModeler {
-    @ViewChild('propertiesRef', { static: true }) private propertiesRef: ElementRef | undefined;
+export class BpmnModeler implements AfterContentInit, OnDestroy {
+  isDarkMode = false;
 
-   private bpmnJS: Modeler;
-
+  @ViewChild('propertiesRef', { static: true }) private propertiesRef: ElementRef | undefined;
   @ViewChild('bpmnModelerRef', { static: true }) private bpmnModelerRef: ElementRef | undefined;
 
-  private xml: string = `<?xml version="1.0" encoding="UTF-8"?>
-    <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_02r90y2" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.24.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.21.0">
-      <bpmn:process id="Process_1s5zn7v" isExecutable="true" camunda:historyTimeToLive="10">
-        <bpmn:startEvent id="StartEvent_1">
-          <bpmn:outgoing>Flow_1e64c8b</bpmn:outgoing>
-        </bpmn:startEvent>
-        <bpmn:endEvent id="Event_0rzkx5b">
-          <bpmn:incoming>Flow_1b80get</bpmn:incoming>
-        </bpmn:endEvent>
-        <bpmn:sequenceFlow id="Flow_1e64c8b" sourceRef="StartEvent_1" targetRef="Activity_1jlibrg" />
-        <bpmn:sequenceFlow id="Flow_1b80get" sourceRef="Activity_1jlibrg" targetRef="Event_0rzkx5b" />
-        <bpmn:userTask id="Activity_1jlibrg" name="A user task here">
-          <bpmn:incoming>Flow_1e64c8b</bpmn:incoming>
-          <bpmn:outgoing>Flow_1b80get</bpmn:outgoing>
-        </bpmn:userTask>
-      </bpmn:process>
-      <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-        <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1s5zn7v">
-          <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-            <dc:Bounds x="179" y="102" width="36" height="36" />
-          </bpmndi:BPMNShape>
-          <bpmndi:BPMNShape id="Event_0rzkx5b_di" bpmnElement="Event_0rzkx5b">
-            <dc:Bounds x="812" y="102" width="36" height="36" />
-          </bpmndi:BPMNShape>
-          <bpmndi:BPMNShape id="Activity_0h5dmju_di" bpmnElement="Activity_1jlibrg">
-            <dc:Bounds x="390" y="80" width="100" height="80" />
-            <bpmndi:BPMNLabel />
-          </bpmndi:BPMNShape>
-          <bpmndi:BPMNEdge id="Flow_1e64c8b_di" bpmnElement="Flow_1e64c8b">
-            <di:waypoint x="215" y="120" />
-            <di:waypoint x="390" y="120" />
-          </bpmndi:BPMNEdge>
-          <bpmndi:BPMNEdge id="Flow_1b80get_di" bpmnElement="Flow_1b80get">
-            <di:waypoint x="490" y="120" />
-            <di:waypoint x="812" y="120" />
-          </bpmndi:BPMNEdge>
-        </bpmndi:BPMNPlane>
-      </bpmndi:BPMNDiagram>
-    </bpmn:definitions>
-    `;
+  private bpmnJS: Modeler;
 
-constructor() {
+  private xml: string = `<?xml version="1.0" encoding="UTF-8"?>
+  <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                    xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                    xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                    xmlns:camunda="http://camunda.org/schema/1.0/bpmn"
+                    xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                    xmlns:modeler="http://camunda.org/schema/modeler/1.0"
+                    id="Definitions_02r90y2"
+                    targetNamespace="http://bpmn.io/schema/bpmn"
+                    exporter="Camunda Modeler"
+                    exporterVersion="5.24.0"
+                    modeler:executionPlatform="Camunda Platform"
+                    modeler:executionPlatformVersion="7.21.0">
+    <bpmn:process id="Process_1s5zn7v" isExecutable="true" camunda:historyTimeToLive="10">
+      <bpmn:startEvent id="StartEvent_1">
+        <bpmn:outgoing>Flow_1e64c8b</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:endEvent id="Event_0rzkx5b">
+        <bpmn:incoming>Flow_1b80get</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="Flow_1e64c8b" sourceRef="StartEvent_1" targetRef="Activity_1jlibrg" />
+      <bpmn:sequenceFlow id="Flow_1b80get" sourceRef="Activity_1jlibrg" targetRef="Event_0rzkx5b" />
+      <bpmn:userTask id="Activity_1jlibrg" name="A user task here">
+        <bpmn:incoming>Flow_1e64c8b</bpmn:incoming>
+        <bpmn:outgoing>Flow_1b80get</bpmn:outgoing>
+      </bpmn:userTask>
+    </bpmn:process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+      <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1s5zn7v">
+        <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+          <dc:Bounds x="179" y="102" width="36" height="36" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Event_0rzkx5b_di" bpmnElement="Event_0rzkx5b">
+          <dc:Bounds x="812" y="102" width="36" height="36" />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNShape id="Activity_0h5dmju_di" bpmnElement="Activity_1jlibrg">
+          <dc:Bounds x="390" y="80" width="100" height="80" />
+          <bpmndi:BPMNLabel />
+        </bpmndi:BPMNShape>
+        <bpmndi:BPMNEdge id="Flow_1e64c8b_di" bpmnElement="Flow_1e64c8b">
+          <di:waypoint x="215" y="120" />
+          <di:waypoint x="390" y="120" />
+        </bpmndi:BPMNEdge>
+        <bpmndi:BPMNEdge id="Flow_1b80get_di" bpmnElement="Flow_1b80get">
+          <di:waypoint x="490" y="120" />
+          <di:waypoint x="812" y="120" />
+        </bpmndi:BPMNEdge>
+      </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+  </bpmn:definitions>
+  `;
+
+  constructor() {
+    // Initialize bpmnJS with custom font and default colors
     this.bpmnJS = new Modeler({
       container: this.bpmnModelerRef?.nativeElement,
       additionalModules: [
         TokenSimulationModule,
         BpmnPropertiesPanelModule,
-        BpmnPropertiesProviderModule,
+        BpmnPropertiesProviderModule
       ],
       propertiesPanel: {
         parent: this.propertiesRef
       },
-    })
+      textRenderer: {
+        defaultStyle: {
+          fontFamily: '"Roboto", sans-serif'
+        }
+      },
+      bpmnRenderer: {
+        defaultFillColor: this.isDarkMode ? '#1e1e1e' : '#ffffff',       // shapes
+        defaultStrokeColor: this.isDarkMode ? '#cfc498' : '#c56868'      // arrows & borders
+      }
+    });
   }
 
-
-
-ngAfterContentInit(): void {
+  ngAfterContentInit(): void {
+  
     this.bpmnJS.attachTo(this.bpmnModelerRef.nativeElement);
-    const propertiesPanel = this.bpmnJS.get('propertiesPanel') as any;
-    propertiesPanel.attachTo(this.propertiesRef.nativeElement);    
+    const propertiesPanel: any = this.bpmnJS.get('propertiesPanel');
+    propertiesPanel.attachTo(this.propertiesRef.nativeElement);
     this.importDiagram(this.xml);
-}
 
+
+    const eventBus: any = this.bpmnJS.get('eventBus');
+    eventBus.on('token.simulation.start', () => this.applyThemeColors());
+    eventBus.on('token.simulation.end', () => this.applyThemeColors());
+  }
 
   ngOnDestroy(): void {
     this.bpmnJS.destroy();
   }
 
-  private importDiagram(xml: string): Observable<{warnings: Array<any>}> {
-    return from(this.bpmnJS.importXML(xml) as Promise<{warnings: Array<any>}>);
+  private importDiagram(xml: string): Observable<{ warnings: Array<any> }> {
+    return from(this.bpmnJS.importXML(xml) as Promise<{ warnings: Array<any> }>);
+  }
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    this.applyThemeColors();
+  }
+
+  private applyThemeColors() {
+    const elementRegistry: any = this.bpmnJS.get('elementRegistry');
+    const graphicsFactory: any = this.bpmnJS.get('graphicsFactory');
+
+    elementRegistry.forEach((el: any) => {
+      if (el.type !== 'label') {
+        const gfx = graphicsFactory.getGraphics(el);
+        if (gfx) {
+          
+          const fill = this.isDarkMode ? '#1e1e1e' : '#ffffff';
+          const stroke = el.type === 'sequenceFlow'
+            ? (this.isDarkMode ? '#f1c40f' : '#333333')  // arrows
+            : (this.isDarkMode ? '#d47f7f' : '#333333'); // shapes
+          gfx.setAttribute('fill', fill);
+          gfx.setAttribute('stroke', stroke);
+        }
+      }
+    });
   }
 }
