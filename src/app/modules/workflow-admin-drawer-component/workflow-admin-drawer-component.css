@@ -1,0 +1,41 @@
+.workflow-container {
+  height: 100vh;
+}
+
+.workflow-drawer {
+  width: 250px;
+}
+
+.workflow-grid {
+  padding: 16px;
+}
+
+.workflow-card {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.workflow-card:hover {
+  transform: scale(1.05);
+}
+
+.more-panel {
+  padding: 24px;
+}
+
+
+.workflow-table-container {
+  padding: 16px;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-header-cell {
+  text-align: left;
+}
+
+td.mat-cell {
+  text-align: left;
+}

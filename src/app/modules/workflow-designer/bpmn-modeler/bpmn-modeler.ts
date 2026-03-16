@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterContentInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterContentInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import Modeler from 'bpmn-js/lib/Modeler';
 import { from, Observable } from 'rxjs';
 import TokenSimulationModule from 'bpmn-js-token-simulation';
@@ -14,8 +14,10 @@ import {
   styleUrls: ['./bpmn-modeler.css'],
 })
 export class BpmnModeler implements AfterContentInit, OnDestroy {
+  
   isDarkMode = false;
-
+  @Input() xmll: string | null = null;          // <-- Input property
+  @Output() saved = new EventEmitter<string>(); // <-- Output event
   @ViewChild('propertiesRef', { static: true }) private propertiesRef: ElementRef | undefined;
   @ViewChild('bpmnModelerRef', { static: true }) private bpmnModelerRef: ElementRef | undefined;
 

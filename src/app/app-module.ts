@@ -1,14 +1,41 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // <-- required for Material
+import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { BpmnModeler } from './modules/workflow-designer/bpmn-modeler/bpmn-modeler';
-import { FormsModule } from '@angular/forms'; 
+import { WorkflowAdminDrawerComponent } from './modules/workflow-admin-drawer-component/workflow-admin-drawer-component';
+import { MatTableModule } from '@angular/material/table';
+// Angular Material Modules needed for admin drawer
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { WorkflowList } from './modules/workflows/workflow-list/workflow-list';
+
 @NgModule({
-  declarations: [App, BpmnModeler],
-  imports: [BrowserModule, AppRoutingModule, MatSlideToggleModule, FormsModule, MatIconModule],
+  declarations: [App, BpmnModeler, WorkflowAdminDrawerComponent, WorkflowList],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    AppRoutingModule,
+    FormsModule,
+
+    // Material
+    MatSidenavModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSlideToggleModule,
+  ],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })
