@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\WorkflowManagementEngine.props" />
-</Project>

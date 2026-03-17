@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WorkflowManagement.Domain.Entities.WorkflowDefinations
+{
+    public class WorkflowDefinition
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string ElsaJson { get; set; } = string.Empty;
+        public bool IsPublished { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    }
+}

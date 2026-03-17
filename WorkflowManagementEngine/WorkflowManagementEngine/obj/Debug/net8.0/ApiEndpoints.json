@@ -1,5 +1,69 @@
 [
   {
+    "ContainingType": "Elsa.Activities.Http.Endpoints.Signals.DispatchEndpoint",
+    "Method": "Handle",
+    "RelativePath": "signals/dispatch/{token}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Elsa.Activities.Http.Endpoints.Signals.DispatchEndpoint",
+    "Method": "Handle",
+    "RelativePath": "signals/dispatch/{token}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Elsa.Activities.Http.Endpoints.Signals.TriggerEndpoint",
+    "Method": "Handle",
+    "RelativePath": "signals/trigger/{token}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Elsa.Activities.Http.Endpoints.Signals.TriggerEndpoint",
+    "Method": "Handle",
+    "RelativePath": "signals/trigger/{token}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WorkflowManagementEngine.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
@@ -9,7 +73,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[WorkflowManagementEngine.WeatherForecast, WorkflowManagementEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WorkflowManagementEngine.WeatherForecast, WorkflowManagementEngine.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -18,5 +82,53 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "WorkflowManagementEngine.Api.Controllers.Workflows.WorkflowController",
+    "Method": "SaveWorkflow",
+    "RelativePath": "workflows",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "WorkflowManagement.Application.DTOs.WorkflowDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkflowManagementEngine.Api.Controllers.Workflows.WorkflowController",
+    "Method": "PublishWorkflow",
+    "RelativePath": "workflows/publish",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "WorkflowManagement.Application.DTOs.WorkflowPublishDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkflowManagementEngine.Api.Controllers.Workflows.WorkflowController",
+    "Method": "StartWorkflow",
+    "RelativePath": "workflows/start/{definitionId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "definitionId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

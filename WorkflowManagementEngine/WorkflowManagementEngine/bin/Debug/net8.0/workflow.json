@@ -1,0 +1,25 @@
+{
+  "activities": [
+    {
+      "id": "StartEvent_1",
+      "type": "Start"
+    },
+    {
+      "id": "Activity_1jlibrg",
+      "type": "WriteLine",
+      "properties": {
+        "Text": "A user task here"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "sourceActivityId": "StartEvent_1",
+      "targetActivityId": "Activity_1jlibrg"
+    },
+    {
+      "sourceActivityId": "Activity_1jlibrg",
+      "targetActivityId": "Event_0rzkx5b"
+    }
+  ]
+}

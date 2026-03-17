@@ -91,6 +91,7 @@ C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Tests.
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Tests.Unit\obj\Debug\net8.0\WorkflowManagement.Tests.Unit.AssemblyInfoInputs.cache
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Tests.Unit\obj\Debug\net8.0\WorkflowManagement.Tests.Unit.AssemblyInfo.cs
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Tests.Unit\obj\Debug\net8.0\WorkflowManagement.Tests.Unit.csproj.CoreCompileInputs.cache
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Tests.Unit\obj\Debug\net8.0\WorkflowManagement.Tests.Unit.sourcelink.json
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Tests.Unit\obj\Debug\net8.0\Workflow.F107860A.Up2Date
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Tests.Unit\obj\Debug\net8.0\WorkflowManagement.Tests.Unit.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Tests.Unit\obj\Debug\net8.0\refint\WorkflowManagement.Tests.Unit.dll

@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<!-- Core Elsa -->
+
+		<!-- Activities -->
+
+		<!-- EF Core persistence -->
+		<PackageReference Include="AutoMapper" Version="12.0.0" />
+		<PackageReference Include="Elsa" Version="2.16.0" />
+		<PackageReference Include="Elsa.Activities.Console" Version="2.16.0" />
+		<PackageReference Include="Elsa.Activities.Http" Version="2.16.0" />
+		<PackageReference Include="Elsa.Persistence.EntityFramework.Core" Version="2.16.0" />
+		<PackageReference Include="Elsa.Persistence.EntityFramework.SqlServer" Version="2.16.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+
+		<!-- Dashboard -->
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WorkflowManagement.Application\WorkflowManagement.Application.csproj" />
+    <ProjectReference Include="..\WorkflowManagement.Infrastructure\WorkflowManagement.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
