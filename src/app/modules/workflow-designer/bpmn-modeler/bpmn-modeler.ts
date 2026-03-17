@@ -6,6 +6,7 @@ import {
   BpmnPropertiesPanelModule,
   BpmnPropertiesProviderModule
 } from 'bpmn-js-properties-panel';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-bpmn-modeler',
@@ -16,8 +17,8 @@ import {
 export class BpmnModeler implements AfterContentInit, OnDestroy {
   
   isDarkMode = false;
-  @Input() xmll: string | null = null;          // <-- Input property
-  @Output() saved = new EventEmitter<string>(); // <-- Output event
+  @Input() xmll: string | null = null;          
+  @Output() saved = new EventEmitter<string>(); 
   @ViewChild('propertiesRef', { static: true }) private propertiesRef: ElementRef | undefined;
   @ViewChild('bpmnModelerRef', { static: true }) private bpmnModelerRef: ElementRef | undefined;
 
@@ -75,7 +76,7 @@ export class BpmnModeler implements AfterContentInit, OnDestroy {
   </bpmn:definitions>
   `;
 
-  constructor() {
+constructor(private http: HttpClient) {
     // Initialize bpmnJS with custom font and default colors
     this.bpmnJS = new Modeler({
       container: this.bpmnModelerRef?.nativeElement,
@@ -136,12 +137,30 @@ export class BpmnModeler implements AfterContentInit, OnDestroy {
           
           const fill = this.isDarkMode ? '#1e1e1e' : '#ffffff';
           const stroke = el.type === 'sequenceFlow'
-            ? (this.isDarkMode ? '#f1c40f' : '#333333')  // arrows
-            : (this.isDarkMode ? '#d47f7f' : '#333333'); // shapes
+            ? (this.isDarkMode ? '#f1c40f' : '#333333')  
+            : (this.isDarkMode ? '#d47f7f' : '#333333'); 
           gfx.setAttribute('fill', fill);
           gfx.setAttribute('stroke', stroke);
         }
       }
     });
   }
+  saveDiagram() {
+  this.bpmnJS.saveXML({ format: true })
+    .then(({ xml }) => this.saved.emit(xml))
+    .catch(err => console.error('Error saving diagram:', err));
+}
+saveWorkflow() {
+  this.bpmnJS.saveXML({ format: true }).then(({ xml }) => {
+
+    const payload = {
+      name: 'My Workflow',
+      xml: xml
+    };
+
+    this.http.post('http://localhost:5067/workflows', payload)
+      .subscribe(res => console.log('Saved', res));
+
+  });
+}
 }

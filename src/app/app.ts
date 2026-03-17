@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
+import { WorkflowSignalrService } from './services/workflow-signalr-service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,13 @@ import { Component, signal } from '@angular/core';
   standalone: false,
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('workflow-management-portal');
+
+  constructor(private signalRService: WorkflowSignalrService) {}
+
+  ngOnInit(): void {
+    this.signalRService.startConnection();
+    this.signalRService.listenToWorkflowUpdates();
+  }
 }

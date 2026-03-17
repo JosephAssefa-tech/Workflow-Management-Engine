@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { WorkflowList } from './modules/workflows/workflow-list/workflow-list';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [App, BpmnModeler, WorkflowAdminDrawerComponent, WorkflowList],
@@ -26,7 +27,7 @@ import { WorkflowList } from './modules/workflows/workflow-list/workflow-list';
     MatTableModule,
     AppRoutingModule,
     FormsModule,
-
+HttpClientModule,
     // Material
     MatSidenavModule,
     MatListModule,
