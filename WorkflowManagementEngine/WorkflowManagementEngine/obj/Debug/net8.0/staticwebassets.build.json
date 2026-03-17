@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "Dd7Xc1JrjMCFHFk3EQgb2VAldZeblLAEOLiRZUljZ3c=",
-  "Source": "WorkflowManagementEngine",
-  "BasePath": "_content/WorkflowManagementEngine",
+  "Hash": "ema349bcmQSEdh9sIj7sCzWIfS9Y+IaGa1hX+iNic2k=",
+  "Source": "WorkflowManagementEngine.Api",
+  "BasePath": "_content/WorkflowManagementEngine.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

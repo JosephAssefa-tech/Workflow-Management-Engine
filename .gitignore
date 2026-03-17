@@ -1,0 +1,13 @@
+# Visual Studio temporary files
+.vs/
+
+# Node / Angular
+node_modules/
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
