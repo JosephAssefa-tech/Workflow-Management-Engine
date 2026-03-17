@@ -158,7 +158,7 @@ saveWorkflow() {
       xml: xml
     };
 
-    this.http.post('http://localhost:5067/workflows', payload)
+    this.http.post('http://localhost:5067/workflows/publish', payload)
       .subscribe(res => console.log('Saved', res));
 
   });
