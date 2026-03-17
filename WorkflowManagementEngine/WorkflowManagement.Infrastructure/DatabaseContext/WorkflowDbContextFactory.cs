@@ -16,7 +16,7 @@ namespace WorkflowManagement.Infrastructure.DatabaseContext
         {
             var optionsBuilder = new DbContextOptionsBuilder<WorkflowDbContext>();
 
-            // Use the same connection string as your appsettings.json
+            
             optionsBuilder.UseSqlServer(
                 "Data Source=localhost\\MSSQLSERVER2022;Initial Catalog=WorkflowEngine;TrustServerCertificate=true;Trusted_Connection=true;Integrated Security=True;Connection Timeout=3600"
             );
