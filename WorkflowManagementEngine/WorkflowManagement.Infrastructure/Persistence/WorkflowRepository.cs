@@ -18,20 +18,26 @@ namespace WorkflowManagement.Infrastructure.Persistence
         {
             _dbContext = dbContext;
         }
-        public async Task AddAsync(WorkflowDefinition workflow)
+        public async Task AddAsync(Workflow workflow)
         {
-            await _dbContext.WorkflowDefinitions.AddAsync(workflow);
+            await _dbContext.Workflows.AddAsync(workflow);
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<List<WorkflowDefinition>> GetAllAsync()
+        public async Task<List<Workflow>> GetAllAsync()
         {
-            return await _dbContext.WorkflowDefinitions.ToListAsync();
+            return await _dbContext.Workflows.ToListAsync();
         }
 
-        public async Task<WorkflowDefinition?> GetByIdAsync(Guid id)
+        public async Task<Workflow?> GetByIdAsync(Guid id)
         {
-            return await _dbContext.WorkflowDefinitions.FindAsync(id);
+            return await _dbContext.Workflows.FindAsync(id);
         }
+
+        public async Task<Workflow?> GetLatestByNameAsync(string name) =>
+              await _dbContext.Workflows
+                      .Where(w => w.Name == name)
+                      .OrderByDescending(w => w.Version)
+                      .FirstOrDefaultAsync();
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "x3FvugKIm/g=",
+  "dgSpecHash": "yajpnl5Cem8=",
   "success": true,
   "projectFilePath": "C:\\ICSMIS\\Workflow-Management\\WorkflowManagementEngine\\WorkflowManagementEngine\\WorkflowManagementEngine.Api.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\user\\.nuget\\packages\\elsa.persistence.entityframework.sqlserver\\2.16.0\\elsa.persistence.entityframework.sqlserver.2.16.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\elsa.scripting.javascript\\2.16.0\\elsa.scripting.javascript.2.16.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\elsa.scripting.liquid\\2.16.0\\elsa.scripting.liquid.2.16.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\elsa.server.core\\2.16.0\\elsa.server.core.2.16.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\esprima\\2.0.4\\esprima.2.0.4.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\fluentstorage\\5.6.0\\fluentstorage.5.6.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\fluid.core\\2.2.14\\fluid.core.2.2.14.nupkg.sha512",

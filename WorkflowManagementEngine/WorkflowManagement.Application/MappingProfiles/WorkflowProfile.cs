@@ -13,10 +13,10 @@ namespace WorkflowManagement.Application.MappingProfiles
     {
         public WorkflowProfile()
         {
-            CreateMap<WorkflowPublishDto, WorkflowDefinition>()
+            CreateMap<WorkflowPublishDto, Workflow>()
     .ForMember(dest => dest.ElsaJson, opt => opt.Ignore()); 
 
-            CreateMap<WorkflowDefinition, WorkflowDto>();
+            CreateMap<Workflow, WorkflowDto>();
         }
 
     }

@@ -11,6 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(WorkflowProfile));
 builder.Services.AddSignalR();
 builder.Services.AddScoped<WorkflowService>();
+builder.Services.AddScoped<WorkflowInstanceService>();
+builder.Services.AddScoped<IWorkflowInstanceRepository, WorkflowInstanceRepository>();
+
+//builder.Services.AddScoped<IWorkflowPublisher, WorkflowPublisher>();
+
 builder.Services.AddScoped<IWorkflowRepository, WorkflowRepository>();
 builder.Services.AddDbContext<WorkflowDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
@@ -55,7 +60,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-        c.RoutePrefix = string.Empty;
+        c.RoutePrefix = "swagger";
     });
 }
 app.UseRouting();

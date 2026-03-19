@@ -29,10 +29,10 @@ public class BpmnToElsaConverter
             activities.Add(new
             {
                 id = task.Attribute("id")?.Value,
-                type = "WriteLine",
+                type = "SignalReceived",
                 properties = new
                 {
-                    Text = task.Attribute("name")?.Value ?? "Task"
+                    Signal = task.Attribute("name")?.Value
                 }
             });
         }

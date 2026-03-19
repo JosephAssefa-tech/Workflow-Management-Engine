@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ytgkforsL2Y=",
+  "dgSpecHash": "UqglU+eHN6c=",
   "success": true,
   "projectFilePath": "C:\\ICSMIS\\Workflow-Management\\WorkflowManagementEngine\\WorkflowManagement.Infrastructure\\WorkflowManagement.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -14,12 +14,15 @@
     "C:\\Users\\user\\.nuget\\packages\\elsa.abstractions\\2.16.0\\elsa.abstractions.2.16.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\elsa.activities.console\\2.16.0\\elsa.activities.console.2.16.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\elsa.core\\2.16.0\\elsa.core.2.16.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\elsa.persistence.entityframework.core\\2.16.0\\elsa.persistence.entityframework.core.2.16.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\elsa.scripting.javascript\\2.16.0\\elsa.scripting.javascript.2.16.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\elsa.scripting.liquid\\2.16.0\\elsa.scripting.liquid.2.16.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\elsa.server.core\\2.16.0\\elsa.server.core.2.16.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\esprima\\2.0.4\\esprima.2.0.4.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\fluentstorage\\5.6.0\\fluentstorage.5.6.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\fluid.core\\2.2.14\\fluid.core.2.2.14.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\jetbrains.annotations\\2023.3.0\\jetbrains.annotations.2023.3.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\jint\\3.0.0-beta-2037\\jint.3.0.0-beta-2037.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\linqkit.core\\1.2.5\\linqkit.core.1.2.5.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",

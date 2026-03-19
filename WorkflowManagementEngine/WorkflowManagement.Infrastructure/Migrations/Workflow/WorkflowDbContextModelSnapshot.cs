@@ -8,7 +8,7 @@ using WorkflowManagement.Infrastructure.DatabaseContext;
 
 #nullable disable
 
-namespace WorkflowManagement.Infrastructure.Migrations
+namespace WorkflowManagement.Infrastructure.Migrations.Workflow
 {
     [DbContext(typeof(WorkflowDbContext))]
     partial class WorkflowDbContextModelSnapshot : ModelSnapshot
@@ -22,7 +22,7 @@ namespace WorkflowManagement.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("WorkflowManagement.Domain.Entities.WorkflowDefinations.WorkflowDefinition", b =>
+            modelBuilder.Entity("WorkflowManagement.Domain.Entities.WorkflowDefinations.Workflow", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,10 +30,6 @@ namespace WorkflowManagement.Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ElsaJson")
                         .IsRequired()
@@ -46,9 +42,12 @@ namespace WorkflowManagement.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("Version")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("WorkflowDefinitions");
+                    b.ToTable("Workflows");
                 });
 #pragma warning restore 612, 618
         }

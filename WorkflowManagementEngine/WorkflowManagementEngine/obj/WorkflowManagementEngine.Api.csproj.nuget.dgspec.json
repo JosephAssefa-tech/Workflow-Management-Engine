@@ -244,6 +244,18 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Elsa": {
+              "target": "Package",
+              "version": "[2.16.0, )"
+            },
+            "Elsa.Persistence.EntityFramework.Core": {
+              "target": "Package",
+              "version": "[2.16.0, )"
+            },
+            "Elsa.Server.Core": {
+              "target": "Package",
+              "version": "[2.16.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.3.9, )"
