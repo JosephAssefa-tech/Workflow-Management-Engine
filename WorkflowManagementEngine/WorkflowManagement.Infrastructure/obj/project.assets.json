@@ -197,6 +197,21 @@
           "lib/netstandard2.1/Elsa.Core.dll": {}
         }
       },
+      "Elsa.Persistence.EntityFramework.Core/2.16.0": {
+        "type": "package",
+        "dependencies": {
+          "Elsa.Core": "2.16.0",
+          "JetBrains.Annotations": "2023.3.0",
+          "Microsoft.EntityFrameworkCore": "8.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/Elsa.Persistence.EntityFramework.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Elsa.Persistence.EntityFramework.Core.dll": {}
+        }
+      },
       "Elsa.Scripting.JavaScript/2.16.0": {
         "type": "package",
         "dependencies": {
@@ -221,6 +236,18 @@
         },
         "runtime": {
           "lib/netstandard2.1/Elsa.Scripting.Liquid.dll": {}
+        }
+      },
+      "Elsa.Server.Core/2.16.0": {
+        "type": "package",
+        "dependencies": {
+          "Elsa.Abstractions": "2.16.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Elsa.Server.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Elsa.Server.Core.dll": {}
         }
       },
       "Esprima/2.0.4": {
@@ -283,6 +310,19 @@
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "JetBrains.Annotations/2023.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "related": ".deps.json;.xml"
           }
         }
       },
@@ -3166,6 +3206,20 @@
         "lib/netstandard2.1/Elsa.Core.dll"
       ]
     },
+    "Elsa.Persistence.EntityFramework.Core/2.16.0": {
+      "sha512": "A4m11V+w8fbSpThTkZDsIAyCk2GFtk4x3C4jpd2bJKGpMUHLQtOZZ9GsBCtHYuP/O2/63nxaeJ7V6Er0saeyFA==",
+      "type": "package",
+      "path": "elsa.persistence.entityframework.core/2.16.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "elsa.persistence.entityframework.core.2.16.0.nupkg.sha512",
+        "elsa.persistence.entityframework.core.nuspec",
+        "lib/net8.0/Elsa.Persistence.EntityFramework.Core.dll",
+        "lib/net9.0/Elsa.Persistence.EntityFramework.Core.dll",
+        "lib/netstandard2.1/Elsa.Persistence.EntityFramework.Core.dll"
+      ]
+    },
     "Elsa.Scripting.JavaScript/2.16.0": {
       "sha512": "rNhxnxS4Ywe1vAsTj/pQ3qHAhKOI6ejZTgEbuWKYBRO7MPVdjfqYe5VDfbmLO4KmE62WIdR7gNhnoqcAScCMCA==",
       "type": "package",
@@ -3188,6 +3242,18 @@
         "elsa.scripting.liquid.2.16.0.nupkg.sha512",
         "elsa.scripting.liquid.nuspec",
         "lib/netstandard2.1/Elsa.Scripting.Liquid.dll"
+      ]
+    },
+    "Elsa.Server.Core/2.16.0": {
+      "sha512": "ayK4Vp4hs6Yedx1656QEZ7zH4dE4P+JYIrHn9f9dsBX6cQsqeSo3+AfvyAUGjBGq1qbvSFuVZGqa4NO+klao/g==",
+      "type": "package",
+      "path": "elsa.server.core/2.16.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "elsa.server.core.2.16.0.nupkg.sha512",
+        "elsa.server.core.nuspec",
+        "lib/netstandard2.1/Elsa.Server.Core.dll"
       ]
     },
     "Esprima/2.0.4": {
@@ -3269,6 +3335,28 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "JetBrains.Annotations/2023.3.0": {
+      "sha512": "PHfnvdBUdGaTVG9bR/GEfxgTwWM0Z97Y6X3710wiljELBISipSfF5okn/vz+C2gfO+ihoEyVPjaJwn8ZalVukA==",
+      "type": "package",
+      "path": "jetbrains.annotations/2023.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "jetbrains.annotations.2023.3.0.nupkg.sha512",
+        "jetbrains.annotations.nuspec",
+        "lib/net20/JetBrains.Annotations.dll",
+        "lib/net20/JetBrains.Annotations.xml",
+        "lib/netstandard1.0/JetBrains.Annotations.deps.json",
+        "lib/netstandard1.0/JetBrains.Annotations.dll",
+        "lib/netstandard1.0/JetBrains.Annotations.xml",
+        "lib/netstandard2.0/JetBrains.Annotations.deps.json",
+        "lib/netstandard2.0/JetBrains.Annotations.dll",
+        "lib/netstandard2.0/JetBrains.Annotations.xml",
+        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.dll",
+        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.xml"
       ]
     },
     "Jint/3.0.0-beta-2037": {
@@ -7280,6 +7368,9 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Elsa >= 2.16.0",
+      "Elsa.Persistence.EntityFramework.Core >= 2.16.0",
+      "Elsa.Server.Core >= 2.16.0",
       "Microsoft.AspNetCore.Mvc.Core >= 2.3.9",
       "Microsoft.EntityFrameworkCore >= 8.0.25",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.25",
@@ -7350,6 +7441,18 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Elsa": {
+            "target": "Package",
+            "version": "[2.16.0, )"
+          },
+          "Elsa.Persistence.EntityFramework.Core": {
+            "target": "Package",
+            "version": "[2.16.0, )"
+          },
+          "Elsa.Server.Core": {
+            "target": "Package",
+            "version": "[2.16.0, )"
+          },
           "Microsoft.AspNetCore.Mvc.Core": {
             "target": "Package",
             "version": "[2.3.9, )"

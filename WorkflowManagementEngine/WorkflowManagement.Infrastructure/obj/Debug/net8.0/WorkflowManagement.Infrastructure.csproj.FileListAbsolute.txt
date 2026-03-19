@@ -1,8 +1,11 @@
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\bin\Debug\net8.0\WorkflowManagement.Infrastructure.deps.json
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\bin\Debug\net8.0\WorkflowManagement.Infrastructure.runtimeconfig.json
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\bin\Debug\net8.0\WorkflowManagement.Infrastructure.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\bin\Debug\net8.0\WorkflowManagement.Infrastructure.pdb
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\bin\Debug\net8.0\WorkflowManagement.Application.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\bin\Debug\net8.0\WorkflowManagement.Domain.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\bin\Debug\net8.0\WorkflowManagement.Application.pdb
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\bin\Debug\net8.0\WorkflowManagement.Domain.pdb
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\obj\Debug\net8.0\WorkflowManagement.Infrastructure.csproj.AssemblyReference.cache
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\obj\Debug\net8.0\WorkflowManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\obj\Debug\net8.0\WorkflowManagement.Infrastructure.AssemblyInfoInputs.cache
@@ -13,8 +16,5 @@ C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infras
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\obj\Debug\net8.0\WorkflowManagement.Infrastructure.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\obj\Debug\net8.0\refint\WorkflowManagement.Infrastructure.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\obj\Debug\net8.0\WorkflowManagement.Infrastructure.pdb
-C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\obj\Debug\net8.0\ref\WorkflowManagement.Infrastructure.dll
-C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\bin\Debug\net8.0\WorkflowManagement.Domain.dll
-C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\bin\Debug\net8.0\WorkflowManagement.Domain.pdb
-C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\bin\Debug\net8.0\WorkflowManagement.Infrastructure.runtimeconfig.json
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\obj\Debug\net8.0\WorkflowManagement.Infrastructure.genruntimeconfig.cache
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagement.Infrastructure\obj\Debug\net8.0\ref\WorkflowManagement.Infrastructure.dll

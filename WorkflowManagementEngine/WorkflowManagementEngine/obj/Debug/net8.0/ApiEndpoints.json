@@ -101,8 +101,34 @@
   },
   {
     "ContainingType": "WorkflowManagementEngine.Api.Controllers.Workflows.WorkflowController",
+    "Method": "GetInstances",
+    "RelativePath": "workflows/instances",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkflowManagementEngine.Api.Controllers.Workflows.WorkflowController",
+    "Method": "GetInstance",
+    "RelativePath": "workflows/instances/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkflowManagementEngine.Api.Controllers.Workflows.WorkflowController",
     "Method": "PublishWorkflow",
-    "RelativePath": "workflows/publish",
+    "RelativePath": "workflows/save",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

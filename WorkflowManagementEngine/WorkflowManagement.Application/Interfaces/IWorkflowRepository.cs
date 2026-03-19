@@ -9,8 +9,9 @@ namespace WorkflowManagement.Application.Interfaces
 {
     public interface IWorkflowRepository
     {
-        Task AddAsync(WorkflowDefinition workflow);
-        Task<WorkflowDefinition?> GetByIdAsync(Guid id);
-        Task<List<WorkflowDefinition>> GetAllAsync();
+        Task AddAsync(Workflow workflow);
+        Task<Workflow?> GetByIdAsync(Guid id);
+        Task<List<Workflow>> GetAllAsync();
+        Task<Workflow?> GetLatestByNameAsync(string name);
     }
 }

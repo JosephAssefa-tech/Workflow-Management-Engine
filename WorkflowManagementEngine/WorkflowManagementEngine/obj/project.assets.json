@@ -293,6 +293,18 @@
           "lib/netstandard2.1/Elsa.Scripting.Liquid.dll": {}
         }
       },
+      "Elsa.Server.Core/2.16.0": {
+        "type": "package",
+        "dependencies": {
+          "Elsa.Abstractions": "2.16.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Elsa.Server.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Elsa.Server.Core.dll": {}
+        }
+      },
       "Esprima/2.0.4": {
         "type": "package",
         "compile": {
@@ -4036,6 +4048,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Elsa": "2.16.0",
+          "Elsa.Persistence.EntityFramework.Core": "2.16.0",
+          "Elsa.Server.Core": "2.16.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.3.9",
           "Microsoft.EntityFrameworkCore": "8.0.25",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.25",
@@ -4286,6 +4301,18 @@
         "elsa.scripting.liquid.2.16.0.nupkg.sha512",
         "elsa.scripting.liquid.nuspec",
         "lib/netstandard2.1/Elsa.Scripting.Liquid.dll"
+      ]
+    },
+    "Elsa.Server.Core/2.16.0": {
+      "sha512": "ayK4Vp4hs6Yedx1656QEZ7zH4dE4P+JYIrHn9f9dsBX6cQsqeSo3+AfvyAUGjBGq1qbvSFuVZGqa4NO+klao/g==",
+      "type": "package",
+      "path": "elsa.server.core/2.16.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "elsa.server.core.2.16.0.nupkg.sha512",
+        "elsa.server.core.nuspec",
+        "lib/netstandard2.1/Elsa.Server.Core.dll"
       ]
     },
     "Esprima/2.0.4": {

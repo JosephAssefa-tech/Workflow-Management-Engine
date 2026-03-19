@@ -269,6 +269,17 @@
           }
         }
       },
+      "Elsa.Server.Core/2.16.0": {
+        "dependencies": {
+          "Elsa.Abstractions": "2.16.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Elsa.Server.Core.dll": {
+            "assemblyVersion": "2.16.0.0",
+            "fileVersion": "2.16.0.0"
+          }
+        }
+      },
       "Esprima/2.0.4": {
         "runtime": {
           "lib/netstandard2.0/Esprima.dll": {
@@ -2416,6 +2427,9 @@
       },
       "WorkflowManagement.Infrastructure/1.0.0": {
         "dependencies": {
+          "Elsa": "2.16.0",
+          "Elsa.Persistence.EntityFramework.Core": "2.16.0",
+          "Elsa.Server.Core": "2.16.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.3.9",
           "Microsoft.EntityFrameworkCore": "8.0.25",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.25",
@@ -2547,6 +2561,13 @@
       "sha512": "sha512-SFdWyrj7TgSVdaeoC/OwjmDVZVjdqRmFlZITz5sVvYEh9nxBhrf96SPdWHWZQKMmN4g4KM44VEMJDlfpZHyzfQ==",
       "path": "elsa.scripting.liquid/2.16.0",
       "hashPath": "elsa.scripting.liquid.2.16.0.nupkg.sha512"
+    },
+    "Elsa.Server.Core/2.16.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ayK4Vp4hs6Yedx1656QEZ7zH4dE4P+JYIrHn9f9dsBX6cQsqeSo3+AfvyAUGjBGq1qbvSFuVZGqa4NO+klao/g==",
+      "path": "elsa.server.core/2.16.0",
+      "hashPath": "elsa.server.core.2.16.0.nupkg.sha512"
     },
     "Esprima/2.0.4": {
       "type": "package",

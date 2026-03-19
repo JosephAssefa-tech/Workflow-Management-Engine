@@ -3,28 +3,28 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace WorkflowManagement.Infrastructure.Migrations
+namespace WorkflowManagement.Infrastructure.Migrations.Workflow
 {
     /// <inheritdoc />
-    public partial class InitialWorkflowDefinition : Migration
+    public partial class InitialWorkflow : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "WorkflowDefinitions",
+                name: "Workflows",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ElsaJson = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsPublished = table.Column<bool>(type: "bit", nullable: false),
+                    Version = table.Column<int>(type: "int", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_WorkflowDefinitions", x => x.Id);
+                    table.PrimaryKey("PK_Workflows", x => x.Id);
                 });
         }
 
@@ -32,7 +32,7 @@ namespace WorkflowManagement.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "WorkflowDefinitions");
+                name: "Workflows");
         }
     }
 }

@@ -23,6 +23,7 @@ C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Elsa.Persistence.EntityFramework.SqlServer.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Elsa.Scripting.JavaScript.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Elsa.Scripting.Liquid.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Elsa.Server.Core.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Esprima.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\FluentStorage.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Fluid.dll
@@ -75,6 +76,7 @@ C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Microsoft.Extensions.Logging.Debug.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Microsoft.Extensions.Logging.EventLog.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Microsoft.Extensions.Logging.EventSource.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
@@ -107,6 +109,7 @@ C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\System.ClientModel.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
@@ -146,9 +149,11 @@ C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\WorkflowManagement.Application.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\WorkflowManagement.Domain.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\WorkflowManagement.Infrastructure.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\WorkflowManagement.Application.pdb
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\WorkflowManagement.Infrastructure.pdb
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\WorkflowManagement.Domain.pdb
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\WorkflowManagementEngine.Api.csproj.AssemblyReference.cache
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\WorkflowManagementEngine.Api.GeneratedMSBuildEditorConfig.editorconfig
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\WorkflowManagementEngine.Api.AssemblyInfoInputs.cache
@@ -167,14 +172,10 @@ C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WorkflowManagementEngine.Api.props
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WorkflowManagementEngine.Api.props
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\staticwebassets.pack.json
-C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\Workflow.160F17C7.Up2Date
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\WorkflowManagementEngine.Api.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\refint\WorkflowManagementEngine.Api.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\WorkflowManagementEngine.Api.pdb
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\WorkflowManagementEngine.Api.genruntimeconfig.cache
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\ref\WorkflowManagementEngine.Api.dll
-C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\WorkflowManagement.Domain.dll
-C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\WorkflowManagement.Domain.pdb
-C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
-C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\System.ClientModel.dll
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -11,10 +11,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Extensions\" />
-	</ItemGroup>
-
-	<ItemGroup>
+	  <PackageReference Include="Elsa" Version="2.16.0" />
+	  <PackageReference Include="Elsa.Persistence.EntityFramework.Core" Version="2.16.0" />
+	  <PackageReference Include="Elsa.Server.Core" Version="2.16.0" />
 	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.9" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.25" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.25">

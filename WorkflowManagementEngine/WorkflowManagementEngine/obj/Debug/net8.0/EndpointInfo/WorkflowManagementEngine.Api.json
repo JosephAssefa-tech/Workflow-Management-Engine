@@ -158,7 +158,7 @@
         }
       }
     },
-    "/workflows/publish": {
+    "/workflows/save": {
       "post": {
         "tags": [
           "Workflow"
@@ -197,6 +197,40 @@
         "parameters": [
           {
             "name": "definitionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/workflows/instances": {
+      "get": {
+        "tags": [
+          "Workflow"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/workflows/instances/{id}": {
+      "get": {
+        "tags": [
+          "Workflow"
+        ],
+        "parameters": [
+          {
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
