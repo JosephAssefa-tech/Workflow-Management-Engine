@@ -12,5 +12,8 @@ namespace WorkflowManagement.Infrastructure.DatabaseContext
       //.  public DbSet<WorkflowInstance> WorkflowInstances { get; set; }
 
         public DbSet<Workflow> Workflows { get; set; }
+        public DbSet<WorkflowTask> WorkflowTasks { get; set; }
+
+        
     }
 }

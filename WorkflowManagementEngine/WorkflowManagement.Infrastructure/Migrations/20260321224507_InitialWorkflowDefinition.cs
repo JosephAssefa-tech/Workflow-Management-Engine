@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace WorkflowManagement.Infrastructure.Migrations.Workflow
+namespace WorkflowManagement.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialWorkflow : Migration
+    public partial class InitialWorkflowDefinition : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,6 +17,7 @@ namespace WorkflowManagement.Infrastructure.Migrations.Workflow
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BpmnProcessId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ElsaJson = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsPublished = table.Column<bool>(type: "bit", nullable: false),
                     Version = table.Column<int>(type: "int", nullable: true),
@@ -26,6 +27,20 @@ namespace WorkflowManagement.Infrastructure.Migrations.Workflow
                 {
                     table.PrimaryKey("PK_Workflows", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "WorkflowTasks",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    WorkflowId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    BpmnTaskId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WorkflowTasks", x => x.Id);
+                });
         }
 
         /// <inheritdoc />
@@ -33,6 +48,9 @@ namespace WorkflowManagement.Infrastructure.Migrations.Workflow
         {
             migrationBuilder.DropTable(
                 name: "Workflows");
+
+            migrationBuilder.DropTable(
+                name: "WorkflowTasks");
         }
     }
 }

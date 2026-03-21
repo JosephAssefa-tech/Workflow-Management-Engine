@@ -63,34 +63,6 @@ namespace WorkflowManagementEngine.Api.Controllers.Workflows
             var result = await _workflowService.PublishAsync(dto);
             return Ok(result);
         }
-        //[HttpPost("publish")]
-        //public async Task<IActionResult> Publish([FromBody] WorkflowPublishDto dto)
-        //{
-        //    var converter = new BpmnToElsaConverter();
-        //    var elsaDefinition = converter.Convert(dto.Xml);
-
-        //    var definitionId = Guid.NewGuid().ToString();
-
-        //    var workflowDefinition = new WorkflowDefinition
-        //    {
-        //        DefinitionId = definitionId,
-        //        Name = dto.Name,
-        //        IsPublished = true
-        //    };
-
-        //    var model = new WorkflowDefinition
-        //    {
-        //        DefinitionId = definitionId,
-        //        Name = dto.Name,
-        //        IsPublished = true,
-        //        Activities = ((dynamic)elsaDefinition).activities,
-        //        Connections = ((dynamic)elsaDefinition).connections
-        //    };
-
-        //    await _publisher.PublishAsync(model);
-
-        //    return Ok(new { definitionId });
-        //}
 
         [HttpPost("start/{definitionId}")]
         public async Task<IActionResult> StartWorkflow(string definitionId)

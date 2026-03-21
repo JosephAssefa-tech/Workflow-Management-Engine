@@ -38,9 +38,9 @@ namespace WorkflowManagement.Infrastructure.Persistence
                               WorkflowStatus = instance.WorkflowStatus,
 
                               
-                            //  CreatedAt = instance.CreatedAt.ToDateTimeUtc().ToString("yyyy-MM-dd HH:mm:ss"),
-                            //  LastExecutedAt = instance.LastExecutedAt.HasValue
-                            //                   ? instance.LastExecutedAt.Value.ToDateTimeUtc().ToString("yyyy-MM-dd HH:mm:ss")
+                             CreatedAt = definition.CreatedAt,
+                             LastExecutedAt = instance.LastExecutedAt,
+                            //                  ? instance.LastExecutedAt.Value.ToDateTimeUtc().ToString("yyyy-MM-dd HH:mm:ss")
                              //                  : null
                           }).ToListAsync();
         }
