@@ -10,6 +10,8 @@ namespace WorkflowManagement.Domain.Entities.WorkflowDefinations
     {
         public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
+
+        public string BpmnProcessId { get; set; }    // BPMN internal ID
         public string ElsaJson { get; set; } = string.Empty;
         public bool IsPublished { get; set; }
         public int? Version { get; set; } = 1;

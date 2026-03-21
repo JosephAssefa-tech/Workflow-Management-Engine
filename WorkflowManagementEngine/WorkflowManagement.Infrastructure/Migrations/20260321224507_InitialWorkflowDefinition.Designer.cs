@@ -9,11 +9,11 @@ using WorkflowManagement.Infrastructure.DatabaseContext;
 
 #nullable disable
 
-namespace WorkflowManagement.Infrastructure.Migrations.Workflow
+namespace WorkflowManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(WorkflowDbContext))]
-    [Migration("20260318113628_InitialWorkflow")]
-    partial class InitialWorkflow
+    [Migration("20260321224507_InitialWorkflowDefinition")]
+    partial class InitialWorkflowDefinition
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,10 @@ namespace WorkflowManagement.Infrastructure.Migrations.Workflow
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("BpmnProcessId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -51,6 +55,28 @@ namespace WorkflowManagement.Infrastructure.Migrations.Workflow
                     b.HasKey("Id");
 
                     b.ToTable("Workflows");
+                });
+
+            modelBuilder.Entity("WorkflowManagement.Domain.Entities.WorkflowDefinations.WorkflowTask", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("BpmnTaskId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("WorkflowId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WorkflowTasks");
                 });
 #pragma warning restore 612, 618
         }

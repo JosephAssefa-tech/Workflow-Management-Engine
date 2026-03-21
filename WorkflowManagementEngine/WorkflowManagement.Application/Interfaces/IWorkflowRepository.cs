@@ -13,5 +13,7 @@ namespace WorkflowManagement.Application.Interfaces
         Task<Workflow?> GetByIdAsync(Guid id);
         Task<List<Workflow>> GetAllAsync();
         Task<Workflow?> GetLatestByNameAsync(string name);
+
+        Task AddTasksAsync(IEnumerable<WorkflowTask> tasks);
     }
 }

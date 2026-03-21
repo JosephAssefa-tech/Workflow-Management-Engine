@@ -23,13 +23,14 @@ namespace WorkflowManagement.Application.Services
             return instances.Select(i => new
             {
                 i.Id,
-               i.DefinitionId,
-                WorkflowName = i.Name, // from Elsa Definition
+                i.DefinitionId,
+                WorkflowName = i.Name, 
                 Status = i.WorkflowStatus.ToString(),
-                i.CreatedAt,
-                i.LastExecutedAt
+                Version = i.Version,
+                CreatedAt=i.CreatedAt.ToString(),
+                LastExecutedAt=i.LastExecutedAt.ToString(),
             })
-            .Cast<object>()   // cast each anonymous type to object
+            .Cast<object>()   
             .ToList();
         }
 
@@ -45,10 +46,10 @@ namespace WorkflowManagement.Application.Services
                 WorkflowName = instance.Name,
                 Status = instance.WorkflowStatus.ToString(),
                 Variables = instance.Variables,
-                instance.CreatedAt,
-                instance.LastExecutedAt,
+                CreatedAt = instance.CreatedAt,
+                LastExecutedAt=instance.LastExecutedAt,
                 CurrentActivityId = instance.CurrentActivity?.ActivityId
-            } as object;  // cast to object
+            } as object; 
         }
 
     }

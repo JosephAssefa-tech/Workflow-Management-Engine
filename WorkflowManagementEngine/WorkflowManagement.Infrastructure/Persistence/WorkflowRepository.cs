@@ -24,6 +24,12 @@ namespace WorkflowManagement.Infrastructure.Persistence
             await _dbContext.SaveChangesAsync();
         }
 
+        public async Task AddTasksAsync(IEnumerable<WorkflowTask> tasks)
+        {
+            _dbContext.WorkflowTasks.AddRange(tasks);
+            await _dbContext.SaveChangesAsync();
+        }
+
         public async Task<List<Workflow>> GetAllAsync()
         {
             return await _dbContext.Workflows.ToListAsync();
