@@ -18,6 +18,7 @@ namespace WorkflowManagement.Application.Services
         private readonly IMapper _mapper;
         private readonly Elsa.Services.IWorkflowPublisher _publisher;
         private readonly IWorkflowRepository _repository;
+
         public WorkflowService(IMapper mapper, Elsa.Services.IWorkflowPublisher publisher, IWorkflowRepository repository)
         {
             _mapper = mapper;
@@ -87,6 +88,21 @@ namespace WorkflowManagement.Application.Services
                 await _repository.AddTasksAsync(tasks); 
             }
 
+            // 5️⃣ Extract connections (flows)
+            var flows = converter.ExtractFlows(dto.Xml);
+
+            var connections = flows.Select(f => new WorkflowConnection
+            {
+                Id = Guid.NewGuid(),
+                WorkflowId = workflowEntity.Id,
+                SourceTaskId = f.Source,
+                TargetTaskId = f.Target
+            }).ToList();
+
+            if (connections.Any())
+            {
+                await _repository.AddConnectionsAsync(connections);
+            }
             // 5️⃣ Prepare Elsa workflow and publish
             var elsaWorkflow = new Elsa.Models.WorkflowDefinition
             {

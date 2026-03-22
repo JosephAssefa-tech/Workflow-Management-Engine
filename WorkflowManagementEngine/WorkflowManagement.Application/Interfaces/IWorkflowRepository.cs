@@ -15,5 +15,9 @@ namespace WorkflowManagement.Application.Interfaces
         Task<Workflow?> GetLatestByNameAsync(string name);
 
         Task AddTasksAsync(IEnumerable<WorkflowTask> tasks);
+
+        Task AddConnectionsAsync(IEnumerable<WorkflowConnection> connections);
+
+        Task<List<WorkflowConnection>> GetConnectionsByWorkflowId(Guid workflowId);
     }
 }

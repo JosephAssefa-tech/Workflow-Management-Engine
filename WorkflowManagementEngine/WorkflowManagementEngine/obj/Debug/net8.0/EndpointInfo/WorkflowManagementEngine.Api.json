@@ -244,6 +244,48 @@
           }
         }
       }
+    },
+    "/workflows/{workflowId}/navigation": {
+      "post": {
+        "tags": [
+          "Workflow"
+        ],
+        "parameters": [
+          {
+            "name": "workflowId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowNavigationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowNavigationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkflowNavigationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -287,6 +329,21 @@
           },
           "xml": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowNavigationRequest": {
+        "type": "object",
+        "properties": {
+          "currentTaskId": {
+            "type": "string",
+            "nullable": true
+          },
+          "inputData": {
+            "type": "object",
+            "additionalProperties": { },
             "nullable": true
           }
         },

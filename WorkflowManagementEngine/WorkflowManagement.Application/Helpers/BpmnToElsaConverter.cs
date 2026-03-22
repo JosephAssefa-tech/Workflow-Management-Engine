@@ -132,4 +132,30 @@ public class BpmnToElsaConverter
 
         return tasks;
     }
+    public List<(string Source, string Target, string Condition)> ExtractFlows(string xml)
+    {
+        var doc = XDocument.Parse(xml);
+        XNamespace bpmn = "http://www.omg.org/spec/BPMN/20100524/MODEL";
+
+        return doc.Descendants(bpmn + "sequenceFlow")
+            .Select(f => (
+                Source: f.Attribute("sourceRef")?.Value,
+                Target: f.Attribute("targetRef")?.Value,
+                Condition: f.Element(bpmn + "conditionExpression")?.Value
+            ))
+            .ToList();
+    }
+    //public List<(string Source, string Target)> ExtractFlows(string xml)
+    //{
+    //    var doc = XDocument.Parse(xml);
+    //    XNamespace bpmn = "http://www.omg.org/spec/BPMN/20100524/MODEL";
+
+    //    return doc.Descendants(bpmn + "sequenceFlow")
+    //        .Select(f => (
+    //            Source: f.Attribute("sourceRef")?.Value,
+    //            Target: f.Attribute("targetRef")?.Value
+    //        ))
+    //        .Where(f => f.Source != null && f.Target != null)
+    //        .ToList();
+    //}
 }
