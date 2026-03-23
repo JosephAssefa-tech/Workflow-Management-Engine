@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Custor.Workflow.Engine.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6455f5b978e66246dc0989250db549166a0f17b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+beed57a2d0e1b586a23c9b7d12caca8b1243b395")]
 [assembly: System.Reflection.AssemblyProductAttribute("Custor.Workflow.Engine.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Custor.Workflow.Engine.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
