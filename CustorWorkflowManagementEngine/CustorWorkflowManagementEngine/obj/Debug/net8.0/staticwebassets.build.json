@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "ILhhtt6EsESTA2+dcKVDWLBc947HZqhN8Jj4bNt5qhg=",
+  "Source": "CustorWorkflowManagementEngine.Api",
+  "BasePath": "_content/CustorWorkflowManagementEngine.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

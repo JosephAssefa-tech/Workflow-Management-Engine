@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "3R0CE6Cg2XA=",
+  "success": true,
+  "projectFilePath": "C:\\ICSMIS\\Workflow-Management\\CustorWorkflowManagementEngine\\Custor.Workflow.Engine.Shared\\Custor.Workflow.Engine.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.17\\microsoft.windowsdesktop.app.ref.8.0.17.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.17\\microsoft.netcore.app.ref.8.0.17.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.17\\microsoft.aspnetcore.app.ref.8.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}

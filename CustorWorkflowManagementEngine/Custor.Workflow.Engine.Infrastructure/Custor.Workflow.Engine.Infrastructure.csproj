@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DatabaseContexts\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Persistances\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Custor.Workflow.Engine.Application\Custor.Workflow.Engine.Application.csproj" />
+  </ItemGroup>
+
+</Project>

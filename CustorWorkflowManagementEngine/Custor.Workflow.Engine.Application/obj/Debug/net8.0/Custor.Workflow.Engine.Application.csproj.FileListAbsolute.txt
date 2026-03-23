@@ -1,0 +1,16 @@
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\bin\Debug\net8.0\Custor.Workflow.Engine.Application.deps.json
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\bin\Debug\net8.0\Custor.Workflow.Engine.Application.dll
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\bin\Debug\net8.0\Custor.Workflow.Engine.Application.pdb
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\bin\Debug\net8.0\Custor.Workflow.Engine.Domain.dll
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\bin\Debug\net8.0\Custor.Workflow.Engine.Domain.pdb
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\obj\Debug\net8.0\Custor.Workflow.Engine.Application.csproj.AssemblyReference.cache
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\obj\Debug\net8.0\Custor.Workflow.Engine.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\obj\Debug\net8.0\Custor.Workflow.Engine.Application.AssemblyInfoInputs.cache
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\obj\Debug\net8.0\Custor.Workflow.Engine.Application.AssemblyInfo.cs
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\obj\Debug\net8.0\Custor.Workflow.Engine.Application.csproj.CoreCompileInputs.cache
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\obj\Debug\net8.0\Custor.Workflow.Engine.Application.sourcelink.json
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\obj\Debug\net8.0\Custor.W.DEBD4CDE.Up2Date
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\obj\Debug\net8.0\Custor.Workflow.Engine.Application.dll
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\obj\Debug\net8.0\refint\Custor.Workflow.Engine.Application.dll
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\obj\Debug\net8.0\Custor.Workflow.Engine.Application.pdb
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Application\obj\Debug\net8.0\ref\Custor.Workflow.Engine.Application.dll
