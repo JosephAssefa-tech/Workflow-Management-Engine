@@ -15,7 +15,21 @@
         <span *ngIf="isDrawerOpen">Workflow List</span>
       </a>
 
+      <a mat-list-item routerLink="/workflows/dashboard">
+        <mat-icon>running workflow</mat-icon>
+        <span *ngIf="isDrawerOpen">Running workflow</span>
+      </a>
 
+
+    <a mat-list-item routerLink="/workflows/dashboard">
+        <mat-icon>running workflow</mat-icon>
+        <span *ngIf="isDrawerOpen">Running workflow</span>
+      </a>
+
+      <a mat-list-item routerLink="/workflows/leave-request">
+        <mat-icon>leave request</mat-icon>
+        <span *ngIf="isDrawerOpen">Leave Request</span>
+      </a>
 
     </mat-nav-list>
 

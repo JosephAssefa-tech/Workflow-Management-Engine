@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -29,7 +30,7 @@ export class WorkflowList {
 
   dataSource = new MatTableDataSource(this.workflows);
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   editWorkflow(workflow: Workflow) {
     this.router.navigate(['/workflows/designer', workflow.id]);
@@ -38,4 +39,17 @@ export class WorkflowList {
   createWorkflow() {
     this.router.navigate(['/workflows/designer/new']);
   }
+    login() {
+  this.http.post<any>(
+    'https://localhost:14658/elsa/api/identity/login',
+    {
+      userName: 'admin',
+      password: 'password'
+    }
+  ).subscribe(res => {
+     console.log('Logged in, token saved', res.accessToken);
+    localStorage.setItem('token', res.accessToken);
+   
+  });
+}
 }

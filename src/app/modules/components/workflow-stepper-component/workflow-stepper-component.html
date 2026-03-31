@@ -1,0 +1,11 @@
+<div class="stepper">
+  <button *ngFor="let prev of prevTasks" (click)="goToPrev(prev)">
+    ← {{ prev }}
+  </button>
+
+  <span>Current: {{ currentTaskId }}</span>
+
+  <button *ngFor="let next of nextTasks" (click)="goToNext(next)">
+    {{ next }} →
+  </button>
+</div>

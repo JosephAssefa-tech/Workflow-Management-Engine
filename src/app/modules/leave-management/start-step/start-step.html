@@ -1,0 +1,16 @@
+<h3>{{ step.displayName }}</h3>
+
+<div>
+<form [formGroup]="form">
+  <mat-form-field appearance="fill" style="display:block; margin-bottom:10px;">
+    <mat-label>Employee Name</mat-label>
+    <input matInput formControlName="employeeName" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="display:block; margin-bottom:10px;">
+    <mat-label>Reason</mat-label>
+    <input matInput formControlName="reason" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="goNext()">Start</button>
+</form></div>

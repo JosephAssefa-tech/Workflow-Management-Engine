@@ -13,7 +13,7 @@ export class App implements OnInit {
   constructor(private signalRService: WorkflowSignalrService) {}
 
   ngOnInit(): void {
-    this.signalRService.startConnection();
+   // this.signalRService.startConnection();
     this.signalRService.listenToWorkflowUpdates();
   }
 }

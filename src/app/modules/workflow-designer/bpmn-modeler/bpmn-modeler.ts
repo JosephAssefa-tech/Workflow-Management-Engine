@@ -2,11 +2,15 @@ import { Component, ViewChild, ElementRef, AfterContentInit, OnDestroy, Input, O
 import Modeler from 'bpmn-js/lib/Modeler';
 import { from, Observable } from 'rxjs';
 import TokenSimulationModule from 'bpmn-js-token-simulation';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastrService } from 'ngx-toastr';
+import camundaModdle from 'camunda-bpmn-moddle/resources/camunda.json';
 import {
   BpmnPropertiesPanelModule,
   BpmnPropertiesProviderModule
 } from 'bpmn-js-properties-panel';
 import { HttpClient } from '@angular/common/http';
+import CustomPropertiesProvider from '../../shared/CustomPropertiesProvider';
 
 @Component({
   selector: 'app-bpmn-modeler',
@@ -15,7 +19,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./bpmn-modeler.css'],
 })
 export class BpmnModeler implements AfterContentInit, OnDestroy {
-  
+  workflowName: string = '';
   isDarkMode = false;
   @Input() xmll: string | null = null;          
   @Output() saved = new EventEmitter<string>(); 
@@ -76,30 +80,23 @@ export class BpmnModeler implements AfterContentInit, OnDestroy {
   </bpmn:definitions>
   `;
 
-constructor(private http: HttpClient) {
+constructor(private http: HttpClient, private snackBar: MatSnackBar, private toaster: ToastrService) {
     // Initialize bpmnJS with custom font and default colors
-    this.bpmnJS = new Modeler({
-      container: this.bpmnModelerRef?.nativeElement,
-      additionalModules: [
-        TokenSimulationModule,
-        BpmnPropertiesPanelModule,
-        BpmnPropertiesProviderModule
-      ],
-      propertiesPanel: {
-        parent: this.propertiesRef
-      },
-      textRenderer: {
-        defaultStyle: {
-          fontFamily: '"Roboto", sans-serif'
-        }
-      },
-      bpmnRenderer: {
-        defaultFillColor: this.isDarkMode ? '#1e1e1e' : '#ffffff',       // shapes
-        defaultStrokeColor: this.isDarkMode ? '#cfc498' : '#c56868'      // arrows & borders
-      }
-    });
+this.bpmnJS = new Modeler({
+  container: this.bpmnModelerRef?.nativeElement,
+  moddleExtensions: { camunda: camundaModdle },
+additionalModules: [
+  TokenSimulationModule,
+  BpmnPropertiesPanelModule,
+  BpmnPropertiesProviderModule,
+  {
+    __init__: ['customPropertiesProvider'],
+    customPropertiesProvider: ['type', CustomPropertiesProvider]
   }
-
+],
+  propertiesPanel: { parent: this.propertiesRef?.nativeElement }
+});
+}
   ngAfterContentInit(): void {
   
     this.bpmnJS.attachTo(this.bpmnModelerRef.nativeElement);
@@ -153,14 +150,57 @@ constructor(private http: HttpClient) {
 saveWorkflow() {
   this.bpmnJS.saveXML({ format: true }).then(({ xml }) => {
 
+    const elementRegistry: any = this.bpmnJS.get('elementRegistry');
+    const canvas: any = this.bpmnJS.get('canvas');
+    const rootElement = canvas.getRootElement();
+    
+     const workflowName = rootElement?.businessObject?.name?.trim();
+    const process = rootElement?.businessObject;
+    // if (!workflowName) {
+    //   this.toaster.error(
+    //     'Workflow name is required. Please set it in the properties panel.',
+    //     'Error'
+    //   );
+    //   return;
+    // }
+
+    const tasks = [];
+
+elementRegistry.forEach((el: any) => {
+  if (el.type === 'bpmn:UserTask') {
+    tasks.push({
+      id: el.businessObject.id,
+      name: el.businessObject.name
+    });
+  }
+});
+
     const payload = {
-      name: 'My Workflow',
+      name: workflowName,
       xml: xml
+        // id: process?.id,  
+        // name: process?.name,
+        // xml: xml,
+        // tasks: tasks
     };
 
-    this.http.post('http://localhost:5067/workflows/publish', payload)
-      .subscribe(res => console.log('Saved', res));
+    this.http.post('http://localhost:5067/workflows/save', payload)
+      .subscribe({
+        next: () => {
+          this.toaster.success(
+            'Workflow saved successfully',
+            'Success'
+          );
+        },
+        error: () => {
+          this.toaster.error(
+            'Failed to save workflow',
+            'Error'
+          );
+        }
+      });
 
   });
 }
+
 }

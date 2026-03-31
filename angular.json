@@ -40,7 +40,8 @@
               "node_modules/bpmn-js/dist/assets/bpmn-font/css/bpmn.css",
               "node_modules/bpmn-js/dist/assets/diagram-js.css",
               "node_modules/bpmn-js-token-simulation/assets/css/bpmn-js-token-simulation.css",
-              "node_modules/@bpmn-io/properties-panel/dist/assets/properties-panel.css"
+              "node_modules/@bpmn-io/properties-panel/dist/assets/properties-panel.css",
+              "node_modules/ngx-toastr/toastr.css"
             ]
           },
           "configurations": {
