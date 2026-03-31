@@ -1,5 +1,5 @@
 // leave-stepper.component.ts
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatStepper } from '@angular/material/stepper';
 import { STEP_COMPONENT_MAP } from '../mapping/step-component-map';
 import { DefaultStep } from '../default-step/default-step';
@@ -16,6 +16,7 @@ export class LeaveStepperComponent implements OnInit {
   
   orderedSteps: any[] = [];
   currentStepIndex = 0;
+  constructor(private cd: ChangeDetectorRef) {}
 ngOnInit() {
   console.log('Received workflow:', this.workflow);
 

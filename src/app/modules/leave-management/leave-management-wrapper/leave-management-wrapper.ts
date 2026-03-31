@@ -14,6 +14,7 @@ export class LeaveManagementWrapper implements OnInit {
   constructor(private leaveWorkflowService: LeaveWorkflowService) {}
 
   ngOnInit(): void {
+   
     this.leaveWorkflowService
       .getWorkflow('bbdcdaa82f0d6315')
       .subscribe(workflow => {

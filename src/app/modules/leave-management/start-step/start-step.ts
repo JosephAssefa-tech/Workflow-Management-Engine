@@ -8,15 +8,15 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
   styleUrl: './start-step.css',
 })
 export class StartStep  {
- @Input() step: any;           // workflow step object
-  @Input() next!: (data?: any) => void;  // move to next step
+ @Input() step: any;          
+  @Input() next!: (data?: any) => void; 
+
  form: FormGroup = new FormGroup({
     employeeName: new FormControl(''),
     reason: new FormControl(''),
   });
 
   goNext() {
-    // Pass form data to parent stepper
     if (this.form.valid && this.next) {
       this.next(this.form.value);
     }
@@ -24,7 +24,7 @@ export class StartStep  {
 
   submit() {
     if (this.form.valid) {
-      // Pass form data to the parent stepper
+
       this.next(this.form.value);
     } else {
       this.form.markAllAsTouched();
