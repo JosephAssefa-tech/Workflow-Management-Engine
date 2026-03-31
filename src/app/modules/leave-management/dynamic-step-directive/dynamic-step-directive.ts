@@ -1,4 +1,4 @@
-import { Directive, Injector, Input, OnChanges, Type, ViewContainerRef } from '@angular/core';
+import { ComponentRef, Directive, EnvironmentInjector, Injector, Input, OnChanges, Type, ViewContainerRef } from '@angular/core';
 
 @Directive({
   selector: '[appDynamicStepHost]',
@@ -10,17 +10,40 @@ export class DynamicStepDirective implements OnChanges {
   @Input() next!: (data?: any) => void;
   @Input() decide!: (val: boolean) => void;
 
-  constructor(private vcr: ViewContainerRef, private injector: Injector) {}
+  private compRef!: ComponentRef<any>;
 
-  ngOnChanges() {
-    this.vcr.clear();
+  constructor(
+    private vcr: ViewContainerRef,
+    private injector: Injector,
+    private envInjector: EnvironmentInjector
+  ) {}
+
+  ngOnInit() {
     if (!this.component) return;
 
-    // <-- pass the injector so Angular resolves forms & material modules
-    const compRef = this.vcr.createComponent(this.component, { injector: this.injector });
+    this.compRef = this.vcr.createComponent(this.component, {
+      injector: this.injector,
+      environmentInjector: this.envInjector
+    });
 
-    compRef.instance.step = this.step;
-    if (this.next) compRef.instance.next = (data?: any) => this.next(data);
-    if (this.decide) compRef.instance.decide = this.decide;
+    this.setInputs();
+  }
+
+  ngOnChanges() {
+    if (this.compRef) {
+      this.setInputs(); // ✅ only update inputs, DON'T recreate
+    }
+  }
+
+  private setInputs() {
+    this.compRef.instance.step = this.step;
+
+    if (this.next) {
+      this.compRef.instance.next = (data?: any) => this.next(data);
+    }
+
+    if (this.decide) {
+      this.compRef.instance.decide = this.decide;
+    }
   }
 }
