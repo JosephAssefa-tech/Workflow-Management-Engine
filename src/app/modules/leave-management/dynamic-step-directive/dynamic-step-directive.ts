@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Directive({
   selector: '[appDynamicStepHost]',
-  standalone: false // ✅ use attribute selector
+  standalone: false 
 })
 export class DynamicStepDirective implements OnChanges {
   @Input() workflowInstanceId$!: BehaviorSubject<string | null>;
@@ -21,7 +21,7 @@ export class DynamicStepDirective implements OnChanges {
     private envInjector: EnvironmentInjector
   ) {}
 
-// dynamic-step-directive.ts
+
 ngOnInit() {
   if (!this.component) return;
 
@@ -42,7 +42,7 @@ ngOnInit() {
 }
   ngOnChanges() {
     if (this.compRef) {
-      this.setInputs(); // ✅ only update inputs, DON'T recreate
+      this.setInputs();
     }
   }
 
@@ -65,16 +65,16 @@ private setInputs() {
   this.compRef.instance.next = this.next;
   this.compRef.instance.decide = this.decide;
 
-// Inside the method where you create the dynamic component
+
 if (this.workflowInstanceId$) {
-  // 1️⃣ Immediately push the current value (if any)
+
   const currentId = this.workflowInstanceId$.getValue();
   if (currentId) {
     this.compRef.instance.workflowInstanceId = currentId;
     console.log(`${this.compRef.instance.constructor.name} received workflowInstanceId immediately:`, currentId);
   }
 
-  // 2️⃣ Subscribe for future updates
+
   this.workflowInstanceId$.subscribe(id => {
     if (id) {
       this.compRef.instance.workflowInstanceId = id;
