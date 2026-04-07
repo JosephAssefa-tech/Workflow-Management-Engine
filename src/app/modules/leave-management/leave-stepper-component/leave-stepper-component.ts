@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular
 import { MatStepper } from '@angular/material/stepper';
 import { STEP_COMPONENT_MAP } from '../mapping/step-component-map';
 import { DefaultStep } from '../default-step/default-step';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-leave-stepper-component',
@@ -11,14 +12,18 @@ import { DefaultStep } from '../default-step/default-step';
   styleUrl: './leave-stepper-component.css',
 })
 export class LeaveStepperComponent implements OnInit {
+  workflowInstanceId$ = new BehaviorSubject<string | null>(null);
   @Input() workflow: any; // Will have steps and connections properties
   @ViewChild('stepper') stepper: MatStepper;
-  
+  @Input() workflowInstanceId!: string;
   orderedSteps: any[] = [];
   currentStepIndex = 0;
   constructor(private cd: ChangeDetectorRef) {}
 ngOnInit() {
-  console.log('Received workflow:', this.workflow);
+      if (this.workflowInstanceId) {
+      this.workflowInstanceId$.next(this.workflowInstanceId);
+    }
+ console.log('Stepper instanceId:', this.workflowInstanceId);
 
   if (this.workflow?.root) {
     this.workflow = this.normalizeWorkflow(this.workflow);
@@ -30,6 +35,7 @@ ngOnInit() {
     console.error('Invalid workflow structure:', this.workflow);
     this.orderedSteps = [];
   }
+  
 }
 
   getOrderedSteps(): any[] {
@@ -98,46 +104,56 @@ let startStep = this.workflow.steps.find(
     
     return steps;
   }
+updateInstanceId(id: string) {
+  console.log('Stepper updating workflowInstanceId:', id);
+  this.workflowInstanceId$.next(id);
+}
 
-  goNext() {
-    const currentStep = this.orderedSteps[this.currentStepIndex];
-    
-    // Find outgoing connections
-    const outgoingConnections = this.workflow.connections.filter(
-      (conn: any) => conn.sourceActivityId === currentStep.id
-    );
-    
-    // Follow the 'Done' connection
-    const doneConnection = outgoingConnections.find(
-      (conn: any) => conn.sourcePort === 'Done' || !conn.sourcePort
-    );
-    
-    if (doneConnection) {
-      const nextIndex = this.orderedSteps.findIndex(
-        (s: any) => s.id === doneConnection.targetActivityId
-      );
-      
-      if (nextIndex !== -1) {
-        this.currentStepIndex = nextIndex;
-        if (this.stepper) {
-          this.stepper.selectedIndex = this.currentStepIndex;
-        }
-      } else {
-        // If the next step isn't in orderedSteps, add it
-        const nextStep = this.workflow.steps.find(
-          (s: any) => s.id === doneConnection.targetActivityId
-        );
-        if (nextStep) {
-          this.orderedSteps.push(nextStep);
-          this.currentStepIndex = this.orderedSteps.length - 1;
-          if (this.stepper) {
-            this.stepper.selectedIndex = this.currentStepIndex;
-          }
-        }
-      }
+goNext(data?: any) {
+  const currentStep = this.orderedSteps[this.currentStepIndex];
+
+  // Update the BehaviorSubject with the workflowInstanceId if present
+  if (data) {
+    const instanceId =
+      typeof data === 'string'
+        ? data
+        : data.workflowInstanceId;
+
+    if (instanceId) {
+      this.workflowInstanceId$.next(instanceId);
+      console.log('Updated workflowInstanceId$', instanceId);
     }
   }
 
+  // --- existing code to move to next step ---
+  const outgoingConnections = this.workflow.connections.filter(
+    (conn: any) => conn.sourceActivityId === currentStep.id
+  );
+
+  const doneConnection = outgoingConnections.find(
+    (conn: any) => conn.sourcePort === 'Done' || !conn.sourcePort
+  );
+
+  if (doneConnection) {
+    const nextIndex = this.orderedSteps.findIndex(
+      (s: any) => s.id === doneConnection.targetActivityId
+    );
+
+    if (nextIndex !== -1) {
+      this.currentStepIndex = nextIndex;
+      if (this.stepper) this.stepper.selectedIndex = this.currentStepIndex;
+    } else {
+      const nextStep = this.workflow.steps.find(
+        (s: any) => s.id === doneConnection.targetActivityId
+      );
+      if (nextStep) {
+        this.orderedSteps.push(nextStep);
+        this.currentStepIndex = this.orderedSteps.length - 1;
+        if (this.stepper) this.stepper.selectedIndex = this.currentStepIndex;
+      }
+    }
+  }
+}
   goBack() {
     if (this.currentStepIndex > 0) {
       this.currentStepIndex--;
@@ -147,45 +163,56 @@ let startStep = this.workflow.steps.find(
     }
   }
 
-  handleDecision(decision: boolean) {
-    const currentStep = this.orderedSteps[this.currentStepIndex];
-    
-    // Find the connection based on decision (True/False)
-    const connection = this.workflow.connections.find(
-      (conn: any) => 
-        conn.sourceActivityId === currentStep.id && 
-        conn.sourcePort === (decision ? 'True' : 'False')
-    );
-    
-    if (connection) {
-      // Find the target step
-      const targetStep = this.workflow.steps.find(
-        (s: any) => s.id === connection.targetActivityId
-      );
-      
-      if (targetStep) {
-        // Check if target step is already in orderedSteps
-        let nextIndex = this.orderedSteps.findIndex(
-          (s: any) => s.id === targetStep.id
-        );
-        
-        if (nextIndex === -1) {
-          // Add the target step and any subsequent steps
-          this.addStepAndFollowing(targetStep);
-          nextIndex = this.orderedSteps.findIndex(
-            (s: any) => s.id === targetStep.id
-          );
-        }
-        
-        if (nextIndex !== -1) {
-          this.currentStepIndex = nextIndex;
-          if (this.stepper) {
-            this.stepper.selectedIndex = this.currentStepIndex;
-          }
-        }
-      }
-    }
+handleDecision(decision: boolean) {
+  const currentStep = this.orderedSteps[this.currentStepIndex];
+
+  const connection = this.workflow.connections.find(
+    (conn: any) =>
+      conn.sourceActivityId === currentStep.id &&
+      conn.sourcePort === (decision ? 'True' : 'False')
+  );
+
+  if (!connection) {
+    console.error('No connection found for decision:', decision);
+    return;
   }
+
+  const targetStep = this.workflow.steps.find(
+    s => s.id === connection.targetActivityId
+  );
+
+  if (!targetStep) {
+    console.error('Target step not found');
+    return;
+  }
+
+  let nextIndex = this.orderedSteps.findIndex(
+    s => s.id === targetStep.id
+  );
+
+  // ✅ Add step if missing
+  if (nextIndex === -1) {
+    this.addStepAndFollowing(targetStep);
+
+    nextIndex = this.orderedSteps.findIndex(
+      s => s.id === targetStep.id
+    );
+  }
+
+  // ❗ CRITICAL FIX: validate index before assigning
+  if (nextIndex === -1) {
+    console.error('Step still not found after adding:', targetStep);
+    return;
+  }
+
+  this.currentStepIndex = nextIndex;
+
+  if (this.stepper && nextIndex < this.orderedSteps.length) {
+    this.stepper.selectedIndex = nextIndex;
+  } else {
+    console.error('Invalid step index:', nextIndex);
+  }
+}
   
   addStepAndFollowing(step: any) {
     const stepsMap = new Map();
