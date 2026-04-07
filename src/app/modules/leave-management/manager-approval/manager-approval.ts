@@ -46,16 +46,15 @@ private resume(decision: boolean) {
     //   return;
     // }
 
-    console.log('Resuming instance:', this.workflowInstanceId);
 
 this.http.post(
   `https://localhost:14658/elsa/api/workflow-instances/${this.workflowInstanceId}/resume`,
   { input: { approved: decision } },
-  { responseType: 'text' }   // ✅ IMPORTANT
+  { responseType: 'text' }  
 ).subscribe({
   next: () => {
     console.log('Workflow resumed successfully');
-    this.decide(decision);   // ✅ NOW IT WILL EXECUTE
+    this.decide(decision);
   },
   error: err => {
     console.error('Resume failed', err);
