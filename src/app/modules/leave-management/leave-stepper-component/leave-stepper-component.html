@@ -10,6 +10,7 @@
   appDynamicStepHost
   [component]="getComponentForStep(step)"
   [step]="step"
+  [workflowInstanceId$]="workflowInstanceId$" 
   [next]="goNext.bind(this)"
   [decide]="handleDecision.bind(this)">
 </ng-container>

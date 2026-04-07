@@ -1,4 +1,5 @@
 <app-leave-stepper-component
-  *ngIf="workflow"
-  [workflow]="workflow">
-</app-leave-stepper-component>
+  *ngIf="workflow && instanceId"
+  [workflow]="workflow"
+  [workflowInstanceId]="instanceId"
+></app-leave-stepper-component>

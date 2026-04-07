@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaveWorkflow } from '../leave-models/workflow';
 import { LeaveWorkflowService } from '../leave-services/leave-workflow-service';
+import { WorkflowStateService } from '../leave-services/WorkflowStateService';
 
 @Component({
   selector: 'app-leave-management-wrapper',
@@ -10,15 +11,23 @@ import { LeaveWorkflowService } from '../leave-services/leave-workflow-service';
 })
 export class LeaveManagementWrapper implements OnInit {
  workflow!: LeaveWorkflow;
+definationId='bbdcdaa82f0d6315';
+instanceId!: string; // ✅ no default value
 
-  constructor(private leaveWorkflowService: LeaveWorkflowService) {}
+  constructor(private leaveWorkflowService: LeaveWorkflowService,    private state: WorkflowStateService,) {}
 
   ngOnInit(): void {
    
     this.leaveWorkflowService
-      .getWorkflow('bbdcdaa82f0d6315')
+      .getWorkflow(this.definationId)
       .subscribe(workflow => {
         this.workflow = workflow;
       });
+this.instanceId = localStorage.getItem('workflowInstanceId')!;
+  //       const data = this.state.get('leaveRequest');
+  // if (data?.workflowInstanceId) {
+  //   this.instanceId = data.workflowInstanceId;
+  // }
   }
+  
 }

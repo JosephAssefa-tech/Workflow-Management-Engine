@@ -1,3 +1,35 @@
+ <!-- <h3>{{ step.displayName }}</h3>
+
+
+<div *ngIf="loading">
+  <p>Loading leave request...</p>
+</div>
+
+<div *ngIf="!loading && leaveRequest">
+  <p><strong>Employee:</strong> {{ leaveRequest.employeeName }}</p>
+  <p><strong>Days:</strong> {{ leaveRequest.days }}</p>
+  <p><strong>Date:</strong> {{ leaveRequest.leaveDate | date }}</p>
+  <p><strong>Reason:</strong> {{ leaveRequest.reason }}</p>
+
+  <div style="margin-top:20px;">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="approve()"
+      [disabled]="loading">
+      Approve
+    </button>
+
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="reject()"
+      [disabled]="loading">
+      Reject
+    </button>
+  </div>
+</div> -->
+
  <h3>{{ step.displayName }}</h3>
 
     <button mat-raised-button color="primary" (click)="approve()">
