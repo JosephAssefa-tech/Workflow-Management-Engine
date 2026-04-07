@@ -101,6 +101,27 @@
   },
   {
     "ContainingType": "WorkflowManagementEngine.Api.Controllers.Workflows.WorkflowController",
+    "Method": "GetNavigation",
+    "RelativePath": "workflows/{workflowId}/navigation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "WorkflowManagement.Application.DTOs.WorkflowNavigationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkflowManagementEngine.Api.Controllers.Workflows.WorkflowController",
     "Method": "GetInstances",
     "RelativePath": "workflows/instances",
     "HttpMethod": "GET",

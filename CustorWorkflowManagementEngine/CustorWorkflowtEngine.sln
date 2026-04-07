@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustorWorkflowManagementEngine.Api", "CustorWorkflowManagementEngine\CustorWorkflowManagementEngine.Api.csproj", "{7EE23548-5256-46A3-AA2D-9A2E1B526230}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{BB02CC40-9ED6-425F-A239-749715DF52F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{69DB687D-8114-41DE-AFB4-1B96D1473B54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custor.Workflow.Engine.Application", "Custor.Workflow.Engine.Application\Custor.Workflow.Engine.Application.csproj", "{E148748C-C12B-4BC4-8146-D1CD83DA3CB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custor.Workflow.Engine.Domain", "Custor.Workflow.Engine.Domain\Custor.Workflow.Engine.Domain.csproj", "{C8FEFDB4-5DCD-4BAC-B67D-460001A06D2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custor.Workflow.Engine.Infrastructure", "Custor.Workflow.Engine.Infrastructure\Custor.Workflow.Engine.Infrastructure.csproj", "{F90597D4-A595-4A9B-A412-0D30D1AF026B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{92575EC5-2C0A-446A-9AFA-C4E22D2DDE8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custor.Workflow.Engine.Tests.Integration", "Custor.Workflow.Engine.Tests.Integration\Custor.Workflow.Engine.Tests.Integration.csproj", "{3952F85E-4128-4D8A-AE63-EA4EB26AF3D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custor.Workflow.Engine.Tests.Unit", "Custor.Workflow.Engine.Tests.Unit\Custor.Workflow.Engine.Tests.Unit.csproj", "{E5181B2B-3382-487D-BA1F-DEC9CC4057B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Custor.Workflow.Engine.Shared", "Custor.Workflow.Engine.Shared\Custor.Workflow.Engine.Shared.csproj", "{32042A70-B53D-4E04-902B-546F4AC14E0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EE23548-5256-46A3-AA2D-9A2E1B526230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE23548-5256-46A3-AA2D-9A2E1B526230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE23548-5256-46A3-AA2D-9A2E1B526230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE23548-5256-46A3-AA2D-9A2E1B526230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E148748C-C12B-4BC4-8146-D1CD83DA3CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E148748C-C12B-4BC4-8146-D1CD83DA3CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E148748C-C12B-4BC4-8146-D1CD83DA3CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E148748C-C12B-4BC4-8146-D1CD83DA3CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8FEFDB4-5DCD-4BAC-B67D-460001A06D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8FEFDB4-5DCD-4BAC-B67D-460001A06D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8FEFDB4-5DCD-4BAC-B67D-460001A06D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8FEFDB4-5DCD-4BAC-B67D-460001A06D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F90597D4-A595-4A9B-A412-0D30D1AF026B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F90597D4-A595-4A9B-A412-0D30D1AF026B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F90597D4-A595-4A9B-A412-0D30D1AF026B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F90597D4-A595-4A9B-A412-0D30D1AF026B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3952F85E-4128-4D8A-AE63-EA4EB26AF3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3952F85E-4128-4D8A-AE63-EA4EB26AF3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3952F85E-4128-4D8A-AE63-EA4EB26AF3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3952F85E-4128-4D8A-AE63-EA4EB26AF3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5181B2B-3382-487D-BA1F-DEC9CC4057B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5181B2B-3382-487D-BA1F-DEC9CC4057B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5181B2B-3382-487D-BA1F-DEC9CC4057B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5181B2B-3382-487D-BA1F-DEC9CC4057B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32042A70-B53D-4E04-902B-546F4AC14E0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32042A70-B53D-4E04-902B-546F4AC14E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32042A70-B53D-4E04-902B-546F4AC14E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32042A70-B53D-4E04-902B-546F4AC14E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{69DB687D-8114-41DE-AFB4-1B96D1473B54} = {BB02CC40-9ED6-425F-A239-749715DF52F3}
+		{E148748C-C12B-4BC4-8146-D1CD83DA3CB9} = {69DB687D-8114-41DE-AFB4-1B96D1473B54}
+		{C8FEFDB4-5DCD-4BAC-B67D-460001A06D2D} = {69DB687D-8114-41DE-AFB4-1B96D1473B54}
+		{F90597D4-A595-4A9B-A412-0D30D1AF026B} = {69DB687D-8114-41DE-AFB4-1B96D1473B54}
+		{92575EC5-2C0A-446A-9AFA-C4E22D2DDE8B} = {69DB687D-8114-41DE-AFB4-1B96D1473B54}
+		{3952F85E-4128-4D8A-AE63-EA4EB26AF3D4} = {92575EC5-2C0A-446A-9AFA-C4E22D2DDE8B}
+		{E5181B2B-3382-487D-BA1F-DEC9CC4057B5} = {92575EC5-2C0A-446A-9AFA-C4E22D2DDE8B}
+		{32042A70-B53D-4E04-902B-546F4AC14E0A} = {69DB687D-8114-41DE-AFB4-1B96D1473B54}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35618AD1-7E76-4A47-8AC3-79741112F1C8}
+	EndGlobalSection
+EndGlobal

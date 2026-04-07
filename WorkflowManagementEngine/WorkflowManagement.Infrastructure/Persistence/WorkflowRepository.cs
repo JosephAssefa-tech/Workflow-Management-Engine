@@ -45,5 +45,24 @@ namespace WorkflowManagement.Infrastructure.Persistence
                       .Where(w => w.Name == name)
                       .OrderByDescending(w => w.Version)
                       .FirstOrDefaultAsync();
+
+
+        public async Task AddConnectionsAsync(IEnumerable<WorkflowConnection> connections)
+        {
+            _dbContext.WorkflowConnections.AddRange(connections);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<List<WorkflowConnection>> GetConnectionsByWorkflowId(Guid workflowId)
+        {
+            return await _dbContext.WorkflowConnections
+                .Where(c => c.WorkflowId == workflowId)
+                .Select(c => new WorkflowConnection
+                {
+                    SourceTaskId = c.SourceTaskId,
+                    TargetTaskId = c.TargetTaskId
+                })
+                .ToListAsync();
+        }
     }
 }

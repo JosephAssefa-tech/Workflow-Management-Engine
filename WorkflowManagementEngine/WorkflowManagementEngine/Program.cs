@@ -3,6 +3,7 @@ using Elsa.Persistence.EntityFramework.SqlServer;
 using WorkflowManagement.Application.Interfaces;
 using WorkflowManagement.Application.MappingProfiles;
 using WorkflowManagement.Application.Services;
+using WorkflowManagement.Application.Services.workflow_navigations;
 using WorkflowManagement.Infrastructure.DatabaseContext;
 using WorkflowManagement.Infrastructure.Persistence;
 using WorkflowManagementEngine.Api.Hubs;
@@ -13,6 +14,9 @@ builder.Services.AddSignalR();
 builder.Services.AddScoped<WorkflowService>();
 builder.Services.AddScoped<WorkflowInstanceService>();
 builder.Services.AddScoped<IWorkflowInstanceRepository, WorkflowInstanceRepository>();
+builder.Services.AddScoped<IWorkflowNavigationService, WorkflowNavigationService>();
+
+
 
 //builder.Services.AddScoped<IWorkflowPublisher, WorkflowPublisher>();
 

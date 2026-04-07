@@ -11,6 +11,7 @@ using WorkflowManagementEngine.Api.Hubs;
 using Elsa.Persistence.Specifications;
 using WorkflowManagement.Infrastructure.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
+using WorkflowManagement.Application.Services.workflow_navigations;
 
 namespace WorkflowManagementEngine.Api.Controllers.Workflows
 {
@@ -18,6 +19,7 @@ namespace WorkflowManagementEngine.Api.Controllers.Workflows
     [Route("/workflows")]
     public class WorkflowController : Controller
     {
+        private readonly IWorkflowNavigationService _workflowNavigation;
         private readonly WorkflowInstanceService _serviceInstance;
         private readonly IWorkflowInstanceStore _workflowInstanceStore;
         private readonly WorkflowService _workflowService;
@@ -27,7 +29,7 @@ namespace WorkflowManagementEngine.Api.Controllers.Workflows
         private readonly IWorkflowRegistry _workflowRegistry;
 
         public WorkflowController(WorkflowInstanceService serviceInstance, IWorkflowInstanceStore workflowInstanceStore, IHubContext<WorkflowHub> hub, IWorkflowRegistry workflowRegistry, IWorkflowPublisher publisher,
-            WorkflowService workflowService,
+            WorkflowService workflowService, IWorkflowNavigationService workflowNavigation,
 
         IStartsWorkflow starter)
         {
@@ -38,6 +40,7 @@ namespace WorkflowManagementEngine.Api.Controllers.Workflows
             _workflowRegistry = workflowRegistry;
             _workflowInstanceStore=workflowInstanceStore;
             _serviceInstance = serviceInstance;
+            _workflowNavigation = workflowNavigation;
 
         }
         [HttpPost]
@@ -94,6 +97,18 @@ namespace WorkflowManagementEngine.Api.Controllers.Workflows
             var instance = await _serviceInstance.GetInstanceAsync(id);
             if (instance == null) return NotFound();
             return Ok(instance);
+        }
+        [HttpPost("{workflowId}/navigation")]
+        public async Task<IActionResult> GetNavigation(
+            Guid workflowId,
+            [FromBody] WorkflowNavigationRequest request)
+        {
+            var result = await _workflowNavigation.GetNextAndPreviousTasks(
+                workflowId,
+                request.CurrentTaskId,
+                request.InputData);
+
+            return Ok(result);
         }
     }
 }

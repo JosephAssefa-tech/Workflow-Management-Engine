@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Custor.Workflow.Engine.Application/1.0.0": {
+        "dependencies": {
+          "Custor.Workflow.Engine.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Custor.Workflow.Engine.Application.dll": {}
+        }
+      },
+      "Custor.Workflow.Engine.Domain/1.0.0": {
+        "runtime": {
+          "Custor.Workflow.Engine.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Custor.Workflow.Engine.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Custor.Workflow.Engine.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

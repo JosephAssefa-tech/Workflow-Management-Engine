@@ -179,3 +179,5 @@ C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\WorkflowManagementEngine.Api.genruntimeconfig.cache
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\ref\WorkflowManagementEngine.Api.dll
 C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\appsettings.Docker.Development.json
+C:\ICSMIS\Workflow-Management\WorkflowManagementEngine\WorkflowManagementEngine\bin\Debug\net8.0\appsettings.Docker.json

@@ -1,0 +1,12 @@
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\bin\Debug\net8.0\Custor.Workflow.Engine.Shared.deps.json
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\bin\Debug\net8.0\Custor.Workflow.Engine.Shared.dll
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\bin\Debug\net8.0\Custor.Workflow.Engine.Shared.pdb
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\obj\Debug\net8.0\Custor.Workflow.Engine.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\obj\Debug\net8.0\Custor.Workflow.Engine.Shared.AssemblyInfoInputs.cache
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\obj\Debug\net8.0\Custor.Workflow.Engine.Shared.AssemblyInfo.cs
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\obj\Debug\net8.0\Custor.Workflow.Engine.Shared.csproj.CoreCompileInputs.cache
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\obj\Debug\net8.0\Custor.Workflow.Engine.Shared.sourcelink.json
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\obj\Debug\net8.0\Custor.Workflow.Engine.Shared.dll
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\obj\Debug\net8.0\refint\Custor.Workflow.Engine.Shared.dll
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\obj\Debug\net8.0\Custor.Workflow.Engine.Shared.pdb
+C:\ICSMIS\Workflow-Management\CustorWorkflowManagementEngine\Custor.Workflow.Engine.Shared\obj\Debug\net8.0\ref\Custor.Workflow.Engine.Shared.dll
