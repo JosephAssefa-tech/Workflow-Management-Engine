@@ -12,7 +12,6 @@ export class WorkflowStateService {
     return this.data[key];
   }
 
-  // Optional: merge multiple keys
   setData(value: any) {
     this.data = { ...this.data, ...value };
   }
