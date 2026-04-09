@@ -36,12 +36,15 @@ export class WorkflowDashboard  implements OnInit{
     });
   }
 
-  loadWorkflows() {
-    this.workflowApi.getInstances().subscribe({
-      next: (data) => this.workflows = data,
-      error: () => this.toastr.error('Failed to load workflows')
-    });
-  }
+loadWorkflows() {
+  this.workflowApi.getInstances().subscribe({
+    next: (data) => {
+      console.log('Workflows response:', data); 
+      this.workflows = data.items;
+    },
+    error: () => this.toastr.error('Failed to load workflows')
+  });
+}
   startWorkflow(definitionId: string) {
   if (!definitionId) {
     this.toastr.error('Workflow definition ID missing');

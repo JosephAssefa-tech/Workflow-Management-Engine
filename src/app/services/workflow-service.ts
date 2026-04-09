@@ -9,6 +9,7 @@ import { WorkflowNavigationRequest } from '../modules/models/WorkflowNavigationR
 })
 export class WorkflowService {
   baseUrl="http://localhost:5067/workflows";
+  baseUrlInstances="https://localhost:14658/elsa/api/workflow-instances";
   constructor(private http: HttpClient) {}
 
   saveWorkflow(payload: any) {
@@ -19,8 +20,8 @@ startWorkflow(definitionId: string) {
   return this.http.post(`${this.baseUrl}/start/${definitionId}`, {});
 }
 
-getInstances(): Observable<any[]> {
-  return this.http.get<any[]>(`${this.baseUrl}/instances`);
+getInstances(): Observable<any> {
+  return this.http.get<any[]>(`${this.baseUrlInstances}`);
  }
 
   getInstance(instanceId: string) {

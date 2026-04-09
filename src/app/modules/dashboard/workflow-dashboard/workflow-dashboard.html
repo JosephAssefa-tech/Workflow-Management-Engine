@@ -12,7 +12,7 @@
   <ng-container matColumnDef="status">
     <th mat-header-cell *matHeaderCellDef> Status </th>
     <td mat-cell *matCellDef="let wf">
-      <span class="status" [ngClass]="wf.status.toLowerCase()">
+      <span class="status" [ngClass]="wf.status">
         {{ wf.status }}
       </span>
     </td>
