@@ -12,7 +12,7 @@ import { WorkflowStateService } from '../leave-services/WorkflowStateService';
 export class LeaveManagementWrapper implements OnInit {
  workflow!: LeaveWorkflow;
 definationId='bbdcdaa82f0d6315';
-instanceId!: string; // ✅ no default value
+instanceId!: string; 
 
   constructor(private leaveWorkflowService: LeaveWorkflowService,    private state: WorkflowStateService,) {}
 
@@ -24,10 +24,7 @@ instanceId!: string; // ✅ no default value
         this.workflow = workflow;
       });
 this.instanceId = localStorage.getItem('workflowInstanceId')!;
-  //       const data = this.state.get('leaveRequest');
-  // if (data?.workflowInstanceId) {
-  //   this.instanceId = data.workflowInstanceId;
-  // }
+
   }
   
 }

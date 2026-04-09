@@ -156,13 +156,7 @@ saveWorkflow() {
     
      const workflowName = rootElement?.businessObject?.name?.trim();
     const process = rootElement?.businessObject;
-    // if (!workflowName) {
-    //   this.toaster.error(
-    //     'Workflow name is required. Please set it in the properties panel.',
-    //     'Error'
-    //   );
-    //   return;
-    // }
+
 
     const tasks = [];
 
