@@ -6,10 +6,11 @@ import { WorkflowNavigationRequest } from '../modules/models/WorkflowNavigationR
 
 @Injectable({
   providedIn: 'root',
-})
+}) 
+// https://localhost:14658/elsa/api/workflow-definitions
 export class WorkflowService {
   baseUrl="http://localhost:5067/workflows";
-  baseUrlInstances="https://localhost:14658/elsa/api/workflow-instances";
+  baseUrlInstances="https://localhost:14658/elsa/api";
   constructor(private http: HttpClient) {}
 
   saveWorkflow(payload: any) {
@@ -19,9 +20,12 @@ export class WorkflowService {
 startWorkflow(definitionId: string) {
   return this.http.post(`${this.baseUrl}/start/${definitionId}`, {});
 }
+getDefinitions(): Observable<any> {
+  return this.http.get<any[]>(`${this.baseUrlInstances}/workflow-definitions`);
+}
 
 getInstances(): Observable<any> {
-  return this.http.get<any[]>(`${this.baseUrlInstances}`);
+  return this.http.get<any[]>(`${this.baseUrlInstances}/workflow-instances`);
  }
 
   getInstance(instanceId: string) {
