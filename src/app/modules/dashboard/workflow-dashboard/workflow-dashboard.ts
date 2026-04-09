@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WorkflowService } from '../../../services/workflow-service';
 import { ToastrService } from 'ngx-toastr';
 import { WorkflowSignalrService } from '../../../services/workflow-signalr-service';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-workflow-dashboard',
@@ -36,13 +37,33 @@ export class WorkflowDashboard  implements OnInit{
     });
   }
 
+// loadWorkflows() {
+//   this.workflowApi.getInstances().subscribe({
+//     next: (data) => {
+//       console.log('Workflows response:', data); 
+//       this.workflows = data.items;
+//     },
+//     error: () => this.toastr.error('Failed to load workflows')
+//   });
+// }
 loadWorkflows() {
-  this.workflowApi.getInstances().subscribe({
-    next: (data) => {
-      console.log('Workflows response:', data); 
-      this.workflows = data.items;
-    },
-    error: () => this.toastr.error('Failed to load workflows')
+  forkJoin({
+    instances: this.workflowApi.getInstances(),
+    definitions: this.workflowApi.getDefinitions()
+  }).subscribe(({ instances, definitions }) => {
+
+const map = definitions.items
+  .filter((def: any) => def.isLatest) 
+  .reduce((acc: any, def: any) => {
+    acc[def.definitionId] = def.name; 
+    return acc;
+  }, {});
+
+    this.workflows = instances.items.map((wf: any) => ({
+      ...wf,
+      workflowName: map[wf.definitionId]
+    }));
+
   });
 }
   startWorkflow(definitionId: string) {
