@@ -1,26 +1,18 @@
 <!-- leave-stepper-component.html -->
 
-<mat-horizontal-stepper linear #stepper *ngIf="orderedSteps.length > 0">
-  <mat-step *ngFor="let step of orderedSteps; let i = index" [label]="getDisplayName(step)">
-   <!-- <mat-step>
-  <ng-template matStepLabel>
-    {{ step.displayName }}
-  </ng-template> -->
-<ng-container
-  appDynamicStepHost
-  [component]="getComponentForStep(step)"
-  [step]="step"
-  [workflowInstanceId$]="workflowInstanceId$" 
-  [next]="goNext.bind(this)"
-  [decide]="handleDecision.bind(this)">
-</ng-container>
-
-<div style="margin-top:20px">
-  <button mat-button *ngIf="i > 0" (click)="goBack()">Back</button>
-</div>
+<mat-horizontal-stepper linear *ngIf="currentStep">
+  <mat-step [label]="getDisplayName(currentStep)">
+    <ng-container
+      appDynamicStepHost
+      [component]="getComponentForStep(currentStep)"
+      [step]="currentStep"
+      [workflowInstanceId$]="workflowInstanceId$"
+      [next]="goNext.bind(this)"
+      [decide]="handleDecision.bind(this)">
+    </ng-container>
   </mat-step>
 </mat-horizontal-stepper>
 
-<div *ngIf="orderedSteps.length === 0">
-  <p>Loading workflow steps...</p>
+<div *ngIf="!currentStep">
+  <p>Loading current workflow step...</p>
 </div>

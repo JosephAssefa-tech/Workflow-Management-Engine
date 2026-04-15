@@ -1,5 +1,11 @@
 <app-leave-stepper-component
-  *ngIf="workflow && instanceId"
-  [workflow]="workflow"
+  *ngIf="workflowDefinition && currentStep"
+  [workflow]="workflowDefinition"
+  [currentStep]="currentStep"
   [workflowInstanceId]="instanceId"
+  (workflowInstanceCreated)="onWorkflowInstanceCreated($event)"
 ></app-leave-stepper-component>
+
+<div *ngIf="workflowDefinition && !currentStep">
+  <p>Loading current workflow step...</p>
+</div>
