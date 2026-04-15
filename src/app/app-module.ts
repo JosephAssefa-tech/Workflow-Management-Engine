@@ -26,6 +26,7 @@ import { LeaveManagementWrapper } from './modules/leave-management/leave-managem
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { StartStep } from './modules/leave-management/start-step/start-step';
 import { ManagerApproval } from './modules/leave-management/manager-approval/manager-approval';
+import { HrApproval } from './modules/leave-management/hr-approval/hr-approval';
 import { DefaultStep } from './modules/leave-management/default-step/default-step';
 import { DecisionStep } from './modules/leave-management/decision-step/decision-step';
 import { DynamicStepDirective } from './modules/leave-management/dynamic-step-directive/dynamic-step-directive';
@@ -47,6 +48,7 @@ import { MatInputModule } from '@angular/material/input';
     LeaveManagementWrapper,
     StartStep,
     ManagerApproval,
+    HrApproval,
     DefaultStep,
     DecisionStep,
     DynamicStepDirective,

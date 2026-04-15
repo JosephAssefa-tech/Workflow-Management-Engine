@@ -44,10 +44,11 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef> Actions </th>
     <td mat-cell *matCellDef="let wf">
-      <button mat-flat-button color="primary"
-              (click)="startWorkflow(wf.definitionId)">
-        Start
-      </button>
+<button mat-flat-button color="primary"
+        (click)="openWorkflow(wf.id)"
+        [disabled]="wf.status === 'Finished'">
+  Resume
+</button>
     </td>
   </ng-container>
 
