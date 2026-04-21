@@ -40,16 +40,25 @@ ngOnInit() {
     this.resume(false);
   }
 
-private resume(decision: boolean) {
-    // if (!this.workflowInstanceId) {
-    //   console.error('Cannot resume workflow: instanceId is undefined');
-    //   return;
-    // }
+  private getEventName(): string {
+    return 'ManagerApproval';
+  }
 
+private resume(decision: boolean) {
+    if (!this.workflowInstanceId) {
+      console.error('Cannot resume workflow: instanceId is undefined');
+      return;
+    }
+
+    const eventName = this.getEventName();
 
 this.http.post(
-  `https://localhost:14658/elsa/api/workflow-instances/${this.workflowInstanceId}/resume`,
-  { input: { approved: decision } },
+  `https://localhost:14658/elsa/api/events/ManagerApproval/trigger`,
+  { 
+    eventName: 'ManagerApproval',
+    workflowInstanceId: this.workflowInstanceId,
+    input: { approved: decision } 
+  },
   { responseType: 'text' }  
 ).subscribe({
   next: () => {

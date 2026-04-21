@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { WorkflowService } from '../../../services/workflow-service';
 import { ToastrService } from 'ngx-toastr';
 import { WorkflowSignalrService } from '../../../services/workflow-signalr-service';
@@ -15,6 +16,7 @@ export class WorkflowDashboard  implements OnInit{
    displayedColumns: string[] = [
   'workflowName',
   'status',
+  'next',
   'version',
   'createdAt',
   'lastExecutedAt',
@@ -24,7 +26,8 @@ export class WorkflowDashboard  implements OnInit{
   constructor(
     private workflowApi: WorkflowService,
     private workflowHub: WorkflowSignalrService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -67,20 +70,31 @@ const map = definitions.items
   });
 }
   startWorkflow(definitionId: string) {
-  if (!definitionId) {
-    this.toastr.error('Workflow definition ID missing');
-    return;
+    if (!definitionId) {
+      this.toastr.error('Workflow definition ID missing');
+      return;
+    }
+
+    this.workflowApi.startWorkflow(definitionId).subscribe({
+      next: (res: any) => {
+        this.toastr.success(`Workflow started: ${res.InstanceId}`);
+        this.loadWorkflows();
+      },
+      error: (err) => {
+        console.error(err);
+        this.toastr.error('Failed to start workflow');
+      }
+    });
   }
 
-  this.workflowApi.startWorkflow(definitionId).subscribe({
-    next: (res: any) => {
-      this.toastr.success(`Workflow started: ${res.InstanceId}`);
-      this.loadWorkflows(); 
-    },
-    error: (err) => {
-      console.error(err);
-      this.toastr.error('Failed to start workflow');
+  openWorkflow(instanceId: string) {
+    if (!instanceId) {
+      this.toastr.error('Workflow instance ID missing');
+      return;
     }
-  });
-}
+
+    this.router.navigate(['/workflows/leave-request'], {
+      queryParams: { instanceId }
+    });
+  }
 }
