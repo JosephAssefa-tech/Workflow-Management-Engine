@@ -90,9 +90,7 @@ export class LeaveStepperComponent implements OnInit, OnChanges {
       if (activityId) {
         this.currentStep = this.workflow.steps.find((step: any) => step.id === activityId);
         this.cd.detectChanges();
-        console.log('Stepper loaded current step:', this.currentStep?.name || this.currentStep?.type, 'for activityId:', activityId);
-        console.log('Stepper available steps:', this.workflow.steps);
-      }
+         }
 
       if (!this.currentStep) {
         console.warn('Unable to resolve current Elsa step for instance', this.workflowInstanceId, activityId, instance);

@@ -86,12 +86,10 @@ export class LeaveManagementWrapper implements OnInit {
           state?.activity?.id;
       }
 
-      console.log('Resolving current step for activityId:', activityId, 'from instance:', instance);
 
       if (activityId && this.workflowDefinition?.steps) {
         this.currentStep = this.workflowDefinition.steps.find((step: any) => step.id === activityId);
-        console.log('Found current step:', this.currentStep, 'for activityId:', activityId);
-        console.log('Available steps:', this.workflowDefinition.steps);
+
       }
 
       if (!this.currentStep) {
