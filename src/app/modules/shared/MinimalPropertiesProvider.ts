@@ -1,7 +1,7 @@
 // minimal-provider.ts
 export default class MinimalPropertiesProvider {
   constructor(propertiesPanel) {
-    console.log('✅ MinimalPropertiesProvider loaded');
+
   }
 
   getGroups(element) {
