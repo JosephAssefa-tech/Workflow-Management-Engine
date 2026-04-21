@@ -16,6 +16,7 @@ export class WorkflowDashboard  implements OnInit{
    displayedColumns: string[] = [
   'workflowName',
   'status',
+  'next',
   'version',
   'createdAt',
   'lastExecutedAt',
