@@ -170,10 +170,7 @@
   background-color: #f3f4f6 !important;
 }
 
-/* 
-::ng-deep svg {
-    display: none !important;
-} */
+
 
 .container {
   display: flex;
@@ -196,7 +193,7 @@
 input {
   padding: 6px;
 }
-/* bpmn-modeler.component.css */
+
 .workflow-name-input {
   padding: 4px 8px;
   margin-right: 8px;

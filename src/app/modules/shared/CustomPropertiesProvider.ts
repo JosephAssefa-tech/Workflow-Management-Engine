@@ -53,7 +53,7 @@ export default class CustomPropertiesProvider {
   }
 }
 
-// ------------------- Helper functions -------------------
+
 function getExtension(element: any) {
   return element.businessObject.extensionElements;
 }
