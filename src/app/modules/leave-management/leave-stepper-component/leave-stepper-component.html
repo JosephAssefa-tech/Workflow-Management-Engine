@@ -1,16 +1,29 @@
 
 
-<mat-horizontal-stepper linear *ngIf="currentStep">
-  <mat-step [label]="getDisplayName(currentStep)">
+<mat-horizontal-stepper linear [selectedIndex]="selectedIndex">
+
+  <mat-step *ngFor="let step of visibleSteps; let i = index"
+            [label]="getDisplayName(step)"
+            [completed]="i < selectedIndex">
+
+
+             <!-- *ngIf="i === selectedIndex"
+             you can use this above if inplace of [completed] to show only current step in stepper header, but it will not show the completed steps in header, so we are using completed to show all steps in header and using css to hide the completed steps from header, you can find the css in leave-stepper-component.css file -->
+
+
     <ng-container
+    
+     [completed]="i < selectedIndex"
       appDynamicStepHost
-      [component]="getComponentForStep(currentStep)"
-      [step]="currentStep"
+      [component]="getComponentForStep(step)"
+      [step]="step"
       [workflowInstanceId$]="workflowInstanceId$"
       [next]="goNext.bind(this)"
       [decide]="handleDecision.bind(this)">
     </ng-container>
+
   </mat-step>
+
 </mat-horizontal-stepper>
 
 <div *ngIf="!currentStep">
