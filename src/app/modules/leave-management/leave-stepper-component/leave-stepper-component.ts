@@ -135,7 +135,6 @@ isBusinessStep(step: any): boolean {
         activityId = state.bookmarks[0].activityId || state.bookmarks[0].activityInstanceId;
       }
 
-      // Fallback to currentActivity or activity
       if (!activityId) {
         activityId =
           state?.currentActivity?.activityId ||
@@ -151,8 +150,8 @@ if (activityId) {
     (step: any) => step.id === activityId
   );
 
-  this.prepareSteps();     // recalculate visible steps + selected index
-  this.cd.detectChanges(); // refresh UI
+  this.prepareSteps();    
+  this.cd.detectChanges(); 
 }
 
       if (!this.currentStep) {
