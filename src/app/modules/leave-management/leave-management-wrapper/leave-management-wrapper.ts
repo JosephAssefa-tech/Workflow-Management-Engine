@@ -40,7 +40,6 @@ export class LeaveManagementWrapper implements OnInit {
   onWorkflowInstanceCreated(instanceId: string) {
     console.log('Wrapper received new workflow instance:', instanceId);
     this.instanceId = instanceId;
-    // Reload the current step for the new instance
     this.loadCurrentStep(instanceId);
   }
 
@@ -67,17 +66,14 @@ export class LeaveManagementWrapper implements OnInit {
     this.leaveWorkflowService.getWorkflowInstance(instanceId).subscribe(instance => {
       const state = instance?.workflowState ?? instance;
 
-      // First try blockingActivities (for suspended workflows waiting for input)
       let activityId =
         state?.blockingActivities?.[0]?.activityId ||
         state?.blockingActivities?.[0]?.id;
 
-      // If no blocking activities, check bookmarks (for event-based waiting)
       if (!activityId && state?.bookmarks?.length > 0) {
         activityId = state.bookmarks[0].activityId || state.bookmarks[0].activityInstanceId;
       }
 
-      // Fallback to currentActivity or activity
       if (!activityId) {
         activityId =
           state?.currentActivity?.activityId ||
