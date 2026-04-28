@@ -3,3 +3,30 @@
 ::ng-deep .mat-horizontal-stepper-header-container {
   background-color: #0ea5e9 !important;
 }
+
+.workflow-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-left: 3px solid #ddd;
+}
+
+.step-item .icon {
+  width: 24px;
+  font-size: 18px;
+}
+
+.step-item .label {
+  font-weight: 500;
+}
+
+.step-item .content {
+  margin-left: 36px;
+}

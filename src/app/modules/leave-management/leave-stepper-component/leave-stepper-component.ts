@@ -5,6 +5,7 @@ import { DefaultStep } from '../default-step/default-step';
 import { BehaviorSubject } from 'rxjs';
 import { LeaveWorkflowService } from '../leave-services/leave-workflow-service';
 
+
 @Component({
   selector: 'app-leave-stepper-component',
   standalone: false,
@@ -12,6 +13,8 @@ import { LeaveWorkflowService } from '../leave-services/leave-workflow-service';
   styleUrl: './leave-stepper-component.css',
 })
 export class LeaveStepperComponent implements OnInit, OnChanges {
+  visibleSteps: any[] = [];
+selectedIndex = 0;
   workflowInstanceId$ = new BehaviorSubject<string | null>(null);
   @Input() workflow: any;
   @Input() currentStep: any;
@@ -21,6 +24,7 @@ export class LeaveStepperComponent implements OnInit, OnChanges {
   constructor(private cd: ChangeDetectorRef, private leaveWorkflowService: LeaveWorkflowService) {}
 
   ngOnInit() {
+      this.prepareSteps();
     if (this.workflowInstanceId && this.isValidInstanceId(this.workflowInstanceId)) {
       this.workflowInstanceId$.next(this.workflowInstanceId);
     }
@@ -28,12 +32,67 @@ export class LeaveStepperComponent implements OnInit, OnChanges {
     console.log('Stepper instanceId:', this.workflowInstanceId);
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['workflowInstanceId'] && this.isValidInstanceId(this.workflowInstanceId)) {
-      this.workflowInstanceId$.next(this.workflowInstanceId);
-    }
+ngOnChanges(changes: SimpleChanges) {
+
+  if (changes['workflow'] || changes['currentStep']) {
+    this.prepareSteps();
   }
 
+  if (changes['workflowInstanceId'] &&
+      this.isValidInstanceId(this.workflowInstanceId)) {
+    this.workflowInstanceId$.next(this.workflowInstanceId);
+  }
+
+  console.log('workflow:', this.workflow);
+  console.log('currentStep:', this.currentStep);
+  console.log('visibleSteps:', this.visibleSteps);
+}
+prepareSteps() {
+  if (!this.workflow?.steps?.length) return;
+
+  const ignoredTypes = [
+    'Elsa.End',
+    'Elsa.FlowDecision'
+  ];
+
+  const ignoredNames = [
+    'End',
+    'End1',
+    'End3'
+  ];
+
+  const filtered = this.workflow.steps.filter(step => {
+    return (
+      !ignoredTypes.includes(step.type) &&
+      !ignoredNames.includes(step.name)
+    );
+  });
+
+  // IMPORTANT: remove duplicates (your graph has duplicates)
+  const unique = Array.from(
+    new Map(filtered.map(s => [s.id, s])).values()
+  );
+
+  this.visibleSteps = unique;
+
+  const currentIndex = this.visibleSteps.findIndex(
+    s => s.id === this.currentStep?.id
+  );
+
+  this.selectedIndex = currentIndex >= 0 ? currentIndex : 0;
+
+  console.log('CLEAN UI steps:', this.visibleSteps);
+}
+isBusinessStep(step: any): boolean {
+  const hidden = [
+    'Elsa.Start',
+    'Elsa.End',
+    'Elsa.Event',
+    'Elsa.FlowDecision'
+  ];
+
+  return !hidden.includes(step.type);
+}
   goNext(data?: any) {
     if (data) {
       const instanceId = typeof data === 'string' ? data : data.workflowInstanceId;
@@ -87,10 +146,14 @@ export class LeaveStepperComponent implements OnInit, OnChanges {
 
       console.log('Stepper resolving current step for activityId:', activityId, 'from instance:', instance);
 
-      if (activityId) {
-        this.currentStep = this.workflow.steps.find((step: any) => step.id === activityId);
-        this.cd.detectChanges();
-         }
+if (activityId) {
+  this.currentStep = this.workflow.steps.find(
+    (step: any) => step.id === activityId
+  );
+
+  this.prepareSteps();     // recalculate visible steps + selected index
+  this.cd.detectChanges(); // refresh UI
+}
 
       if (!this.currentStep) {
         console.warn('Unable to resolve current Elsa step for instance', this.workflowInstanceId, activityId, instance);
