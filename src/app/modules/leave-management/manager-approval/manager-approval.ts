@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -15,7 +16,7 @@ export class ManagerApproval {
   workflowInstanceId!: string | null;
 
   
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private toaster: ToastrService) {}
 ngOnInit() {
   if (this.workflowInstanceId$) {
     const id = this.workflowInstanceId$.getValue();
@@ -46,6 +47,7 @@ ngOnInit() {
 
 private resume(decision: boolean) {
     if (!this.workflowInstanceId) {
+        this.toaster.warning('Leave request rejected', 'Success');
       console.error('Cannot resume workflow: instanceId is undefined');
       return;
     }
@@ -63,6 +65,7 @@ this.http.post(
 ).subscribe({
   next: () => {
     console.log('Workflow resumed successfully');
+       this.toaster.success('Leave request processed successfully', 'Success');
     this.decide(decision);
   },
   error: err => {
