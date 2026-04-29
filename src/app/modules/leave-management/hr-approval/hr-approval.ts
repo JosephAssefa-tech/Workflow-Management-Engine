@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -14,7 +15,7 @@ export class HrApproval implements OnInit {
   @Input() workflowInstanceId$!: BehaviorSubject<string | null>;
   workflowInstanceId!: string | null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private toaster: ToastrService) {}
 
   ngOnInit() {
     if (this.workflowInstanceId$) {
@@ -61,6 +62,7 @@ export class HrApproval implements OnInit {
     ).subscribe({
       next: () => {
         console.log('HR workflow resumed successfully');
+           this.toaster.success('Leave request processed successfully', 'Success');
         this.decide(decision);
       },
       error: err => {

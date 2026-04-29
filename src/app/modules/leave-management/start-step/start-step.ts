@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { WorkflowStateService } from '../leave-services/WorkflowStateService';
 import { LeaveRequestService } from '../leave-services/LeaveRequestService';
+import { Toast, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-start-step',
@@ -22,6 +23,7 @@ export class StartStep  {
   constructor(
     private fb: FormBuilder,
     private state: WorkflowStateService,
+    private toaster: ToastrService,
     private leaveService: LeaveRequestService
   ) {
        this.form = this.fb.group({
@@ -55,6 +57,7 @@ submit() {
 
       const workflowInstanceId = res?.workflowState?.id;
       if (workflowInstanceId) {
+        this.toaster.success('Form submitted successfully', 'Success');
         console.log('Workflow instance created:', workflowInstanceId);
 
         // Push the workflowInstanceId through next callback
